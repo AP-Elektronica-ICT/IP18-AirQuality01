@@ -1,0 +1,73 @@
+* {
+    -webkit-transition: .2s ease-in-out;
+    -moz-transition: .2s ease-in-out;
+    -o-transition: .2s ease-in-out;
+    transition: .2s ease-in-out;
+  }
+  
+  .bedroom:hover .bed { fill: #ff5533; }
+  .bedroom:hover .bed-bg { fill: #ffaa88; }
+  .kitchen:hover .kit { fill: #ee7700; }
+  .kitchen:hover .kit-bg { fill: #77bb99; }
+  .kid-room:hover .kid { fill: #3388cc; }
+  .kid-room:hover .kid-bg { fill: #ee9999; }
+  .living:hover .liv { fill: #225555; }
+  .living:hover .liv-bg { fill: #ffbb88; }
+  .entrance:hover .hall { fill: #882222; }
+  .entrance:hover .hall-bg { fill: #ccbbbb; }
+  .outdoor:hover .out { fill: #447700; }
+  .outdoor:hover .out-bg { fill: #ddbb99; }
+  .bathroom:hover .bath { fill: #333666; }
+  .bathroom:hover .bath-bg { fill: #99bbcc; }
+  .wf-logo:hover .logo { fill: #ff4400; }
+  
+  #kid-ico,
+  #bed-ico,
+  #liv-ico,
+  #kit-ico,
+  #out-ico,
+  #hall-ico,
+  #bath-ico,
+  #logo {
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+  }
+  
+  @media only screen and (max-width: 680px){
+    .plan {
+      -webkit-transform: rotate(90deg) scale(0.8);
+      -moz-transform: rotate(90deg) scale(0.8);
+      -o-transform: rotate(90deg) scale(0.8);
+      transform: rotate(90deg) scale(0.8);
+    }
+    #kid-ico,
+    #bed-ico,
+    #liv-ico,
+    #kit-ico,
+    #out-ico,
+    #hall-ico,
+    #bath-ico,
+    #logo {
+      -webkit-transform: rotate(-90deg);
+      -moz-transform: rotate(-90deg);
+      -o-transform: rotate(-90deg);
+      transform: rotate(-90deg);
+    }
+  }
+  
+  .wrapper {
+    position: absolute;
+    top: 15px;
+    left: 40px;
+    perspective: 2500px;
+    z-index: 50;
+  }
+  
+  .plan {
+    transform: rotateX(0deg) rotate(0deg) skewX(0deg) skewY(0deg) scaleX(0.95);
+  }
+  
+  
+  

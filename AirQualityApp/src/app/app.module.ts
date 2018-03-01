@@ -10,13 +10,15 @@ import { AppComponent } from './app.component';
 import { FloorPlanComponent } from './floor-plan/floor-plan.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HomeComponent } from './home/home.component';
+import { RoomInformationComponent } from './room-information/room-information.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FloorPlanComponent,
     NavBarComponent,
-    HomeComponent
+    HomeComponent,
+    RoomInformationComponent
   ],
   imports: [
     BrowserModule,
@@ -25,8 +27,9 @@ import { HomeComponent } from './home/home.component';
     MDBBootstrapModule.forRoot(),
     ChartsModule,
     RouterModule.forRoot([
-      { path: 'home', component: FloorPlanComponent},
+      { path: 'home', component: HomeComponent},
       { path: 'floorplan', component: FloorPlanComponent},
+      { path: 'roominfo', component: RoomInformationComponent},
       { path: '', redirectTo: 'home', pathMatch: 'full'}
     ], { useHash: true })
   ],

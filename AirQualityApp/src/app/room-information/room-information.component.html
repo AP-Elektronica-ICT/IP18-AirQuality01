@@ -1,18 +1,31 @@
 <div class="row d-flex justify-content-center px-5">
-  <div class="col border border-dark p-1"></div>
-  <div class="col border border-dark p-1">
-      <div class="border border-dark p-1" style="display: block">
-          <canvas mdbChart 
-              [chartType]="chartType"
-              [datasets]="chartDatasets" 
-              [labels]="chartLabels"
-              [colors]="chartColors"
-              [options]="chartOptions"
-              [legend]="true"
-              (chartHover)="chartHovered($event)" 
-              (chartClick)="chartClicked($event)">
-          </canvas>
+  <div class="col p-2">
+        <div class="card">
+                <!--Card content-->
+                <div class="card-body">
+                    <!--Title-->
+                    <h4 class="card-title">Card title</h4>
+                    <!--Text-->
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary waves-light" mdbRippleRadius>Button</a>
+                </div>
+            
+            </div>
+  </div>
+  <div class="col p-2">
+      <div class="" style="display: block">
+            <div class="card">
+                    <canvas mdbChart 
+                    [chartType]="chartType"
+                    [datasets]="chartDatasets" 
+                    [labels]="chartLabels"
+                    [colors]="chartColors"
+                    [options]="chartOptions"
+                    [legend]="true"
+                    (chartHover)="chartHovered($event)" 
+                    (chartClick)="chartClicked($event)">
+                </canvas>
+      </div>
         </div>
-        <mdb-date-picker name="mydate" [options]="myDatePickerOptions" [placeholder]="'Selected date'" [(ngModel)]="model" required></mdb-date-picker>
   </div>
 </div>

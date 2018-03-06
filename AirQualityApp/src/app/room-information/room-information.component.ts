@@ -10,8 +10,8 @@ export class RoomInformationComponent implements OnInit {
   public chartType:string = 'line';
 
   public chartDatasets:Array<any> = [
-    {data: [65, 59, 80, 81, 56, 55, 40], label: 'My First dataset'},
-    {data: [28, 48, 40, 19, 86, 27, 90], label: 'My Second dataset'}
+    {data: [65, 59, 80, 81, 56, 55, 40], label: 'Temperature per seconds'},
+    {data: [28, 48, 40, 19, 86, 27, 90], label: 'Temperature per minutes'}
   ];
 
   public chartLabels:Array<any> = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'];

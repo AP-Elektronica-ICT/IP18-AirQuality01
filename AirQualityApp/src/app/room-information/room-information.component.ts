@@ -19,12 +19,19 @@ export class RoomInformationComponent implements OnInit {
   private selected: string = "btn btn-primary";
   private notSelected: string = "btn";
 
+  public graphActive: boolean = true;
+  public diagramActive: boolean = false;
+
   public setGraphActive(){
     this.btnGraphState = this.selected;
     this.btnDiagramState = this.notSelected;
+    this.graphActive = true;
+    this.diagramActive = false;
   }
   public setDiagramActive(){
     this.btnGraphState = this.notSelected;
     this.btnDiagramState = this.selected;
+    this.diagramActive = true;
+    this.graphActive = false;
   }
 }

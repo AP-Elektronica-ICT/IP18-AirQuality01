@@ -2,10 +2,17 @@
     <div class="col p-2">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Card title</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary waves-light" mdbRippleRadius>Button</a>
+                <h4 class="card-title">Room 1</h4>
+                <p class="card-text">
+                    Average temperature:<br>
+                    Average CO² level:<br>
+                    Average Humidity:
+                </p>
             </div>
+        </div>
+        <br>
+        <div class="card">
+            <app-table></app-table>
         </div>
     </div>
 
@@ -18,7 +25,8 @@
         <div class="card">
 
             <div class="card-body">
-                <app-graph></app-graph>
+                <app-graph *ngIf="graphActive"></app-graph>
+                <app-diagram *ngIf="diagramActive"></app-diagram>
             </div>
         </div>
     </div>

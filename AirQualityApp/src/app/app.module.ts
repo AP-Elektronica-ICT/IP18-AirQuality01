@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { RoomInformationComponent } from './room-information/room-information.component';
 import { GraphComponent } from './room-information/graph/graph.component';
 import { DiagramComponent } from './room-information/diagram/diagram.component';
+import { TableComponent } from './room-information/table/table.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { DiagramComponent } from './room-information/diagram/diagram.component';
     HomeComponent,
     RoomInformationComponent,
     GraphComponent,
-    DiagramComponent
+    DiagramComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,

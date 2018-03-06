@@ -6,19 +6,19 @@
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 <a href="#" class="btn btn-primary waves-light" mdbRippleRadius>Button</a>
             </div>
-
         </div>
     </div>
 
     <div class="col p-2">
+
+        <div class="btn-group">
+            <button type="button" [ngClass]="btnGraphState" (click)="setGraphActive()">Graph</button>
+            <button type="button" [ngClass]="btnDiagramState" (click)="setDiagramActive()">Diagram</button>
+        </div>
         <div class="card">
-            
-            <div class="d-inline-flex p-2">
-                <button type="button" class="btn btn-primary waves-light" mdbRippleRadius>Graph</button>
-                <button type="button" class="btn btn-primary waves-light" mdbRippleRadius>Diagram</button>
-            </div>
+
             <div class="card-body">
-                <app-diagram></app-diagram>
+                <app-graph></app-graph>
             </div>
         </div>
     </div>

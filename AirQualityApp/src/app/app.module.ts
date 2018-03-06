@@ -11,6 +11,8 @@ import { FloorPlanComponent } from './floor-plan/floor-plan.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HomeComponent } from './home/home.component';
 import { RoomInformationComponent } from './room-information/room-information.component';
+import { GraphComponent } from './room-information/graph/graph.component';
+import { DiagramComponent } from './room-information/diagram/diagram.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { RoomInformationComponent } from './room-information/room-information.co
     FloorPlanComponent,
     NavBarComponent,
     HomeComponent,
-    RoomInformationComponent
+    RoomInformationComponent,
+    GraphComponent,
+    DiagramComponent
   ],
   imports: [
     BrowserModule,

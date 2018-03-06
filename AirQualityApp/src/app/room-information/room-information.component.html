@@ -1,31 +1,25 @@
 <div class="row d-flex justify-content-center px-5">
-  <div class="col p-2">
+    <div class="col p-2">
         <div class="card">
-                <!--Card content-->
-                <div class="card-body">
-                    <!--Title-->
-                    <h4 class="card-title">Card title</h4>
-                    <!--Text-->
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary waves-light" mdbRippleRadius>Button</a>
-                </div>
-            
+            <div class="card-body">
+                <h4 class="card-title">Card title</h4>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary waves-light" mdbRippleRadius>Button</a>
             </div>
-  </div>
-  <div class="col p-2">
-      <div class="" style="display: block">
-            <div class="card">
-                    <canvas mdbChart 
-                    [chartType]="chartType"
-                    [datasets]="chartDatasets" 
-                    [labels]="chartLabels"
-                    [colors]="chartColors"
-                    [options]="chartOptions"
-                    [legend]="true"
-                    (chartHover)="chartHovered($event)" 
-                    (chartClick)="chartClicked($event)">
-                </canvas>
-      </div>
+
         </div>
-  </div>
+    </div>
+
+    <div class="col p-2">
+        <div class="card">
+            
+            <div class="d-inline-flex p-2">
+                <button type="button" class="btn btn-primary waves-light" mdbRippleRadius>Graph</button>
+                <button type="button" class="btn btn-primary waves-light" mdbRippleRadius>Diagram</button>
+            </div>
+            <div class="card-body">
+                <app-diagram></app-diagram>
+            </div>
+        </div>
+    </div>
 </div>

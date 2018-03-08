@@ -1,0 +1,33 @@
+<div class="row d-flex justify-content-center px-5">
+    <div class="col p-2">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Room 1</h4>
+                <p class="card-text">
+                    Average temperature:<br>
+                    Average CO² level:<br>
+                    Average Humidity:
+                </p>
+            </div>
+        </div>
+        <br>
+        <div class="card">
+            <app-table></app-table>
+        </div>
+    </div>
+
+    <div class="col p-2">
+
+        <div class="btn-group">
+            <button type="button" [ngClass]="btnGraphState" (click)="setGraphActive()">Graph</button>
+            <button type="button" [ngClass]="btnDiagramState" (click)="setDiagramActive()">Diagram</button>
+        </div>
+        <div class="card">
+
+            <div class="card-body">
+                <app-graph *ngIf="graphActive"></app-graph>
+                <app-diagram *ngIf="diagramActive"></app-diagram>
+            </div>
+        </div>
+    </div>
+</div>

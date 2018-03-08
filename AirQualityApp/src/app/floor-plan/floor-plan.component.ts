@@ -5,11 +5,17 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './floor-plan.component.html',
   styleUrls: ['./floor-plan.component.css']
 })
+
+
 export class FloorPlanComponent implements OnInit {
+
+  
 
   constructor() { }
 
   ngOnInit() {
   }
+
+  
 
 }

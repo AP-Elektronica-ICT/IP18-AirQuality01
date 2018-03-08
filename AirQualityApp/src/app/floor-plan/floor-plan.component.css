@@ -1,8 +1,10 @@
+
 * {
     -webkit-transition: .2s ease-in-out;
     -moz-transition: .2s ease-in-out;
     -o-transition: .2s ease-in-out;
     transition: .2s ease-in-out;
+    
   }
   
   .bedroom:hover .bed { fill: #ff5533; }

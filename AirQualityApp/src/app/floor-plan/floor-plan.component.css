@@ -1,5 +1,17 @@
+#path3788:hover{fill:#fff000!important;}
+.legende{background-color: rgb(224, 214, 214);}
+.legende p{margin-left: 12px;}
 
-* {
+.legende .legend { list-style: none; }
+.legende .legend li { float: left; margin-right: 10px; }
+.legende .legend span { border: 1px solid #ccc; float: left; width: 20px; height: 20px; margin: 2px; }
+
+.legende .legend .first { background-color: #00ff00; }
+.legende .legend .second { background-color: #ffff00; }
+.legende .legend .third { background-color: #ff8800; }
+.legende .legend .fourth { background-color: #ff0000; }
+
+/** {
     -webkit-transition: .2s ease-in-out;
     -moz-transition: .2s ease-in-out;
     -o-transition: .2s ease-in-out;
@@ -69,7 +81,7 @@
   
   .plan {
     transform: rotateX(0deg) rotate(0deg) skewX(0deg) skewY(0deg) scaleX(0.95);
-  }
+  }*/
   
   
   

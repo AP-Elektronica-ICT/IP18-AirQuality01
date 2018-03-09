@@ -1,6 +1,6 @@
 <div class="row d-flex justify-content-center px-5">
 
-<div class="legende">
+<div class="legende" (mouseenter)='over()'(mouseleave)='leave()'>
   <p>Air Quality Value legend</p>
   <p>The Value of the Air Quality is calculated by all the sensors in the room.</p>
   <p>This gives us a good idea in what shape a specific room is.</p>
@@ -14,7 +14,9 @@
   </ul>
 </div>
 
-
+<div >
+  <div *ngIf="showSelected" [ngStyle]="{'color':color}">test</div>
+</div>
 
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -139,7 +141,8 @@
        x="782"
        y="621.22858" />
        <!-- opvulling van de kamer-->
-    <path 
+    <path [ngStyel]="{'opacity':opacity}"
+       class="test"
        style="fill:#00ff00;stroke-width:1.42857146"
        d="M 21.714285,109.00763 V 27.579057 h 92.857145 92.85714 V 109.00763 190.4362 H 114.57143 21.714285 Z"
        id="path3788"
@@ -225,6 +228,7 @@
        transform="translate(0,93.80003)" />
   </g>
 </svg>
+
 
 
 </div>

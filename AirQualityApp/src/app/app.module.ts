@@ -14,6 +14,8 @@ import { RoomInformationComponent } from './room-information/room-information.co
 import { GraphComponent } from './room-information/graph/graph.component';
 import { DiagramComponent } from './room-information/diagram/diagram.component';
 import { TableComponent } from './room-information/table/table.component';
+import { MapComponent } from './floor-plan/map/map.component';
+import { LegendComponent } from './floor-plan/legend/legend.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { TableComponent } from './room-information/table/table.component';
     RoomInformationComponent,
     GraphComponent,
     DiagramComponent,
-    TableComponent
+    TableComponent,
+    MapComponent,
+    LegendComponent
   ],
   imports: [
     BrowserModule,

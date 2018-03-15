@@ -10,30 +10,5 @@ import * as firebase from 'firebase/app';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  user: Observable<firebase.User>;
-  items: AngularFireList<any[]>;
-  itemList: Observable<any[]>;
-  msgVal: string;
-
-  constructor(public angularFireAuth: AngularFireAuth, public angularFireDatabase: AngularFireDatabase) {
-    this.user = angularFireAuth.authState;
-    this.items = angularFireDatabase.list('items');
-    this.itemList = angularFireDatabase.list('items').valueChanges();
-    this.msgVal = '';
-  }
-
-  login() {
-    this.angularFireAuth.auth.signInAnonymously();
-    console.log(this.user);
-  }
-
-  logout() {
-    this.angularFireAuth.auth.signOut();
-  }
-
-  Send(desc: any) {
-    const descs = [];
-    descs[0] = desc;
-    this.items.push(descs);
-  }
+  
 }

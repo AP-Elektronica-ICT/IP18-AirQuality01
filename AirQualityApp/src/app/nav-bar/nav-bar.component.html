@@ -9,28 +9,21 @@
 
       <!-- Links -->
       <ul class="navbar-nav mr-auto">
-          <li class="nav-item" [routerLinkActive]="['active']">
+          <li  *ngIf="authenticated" class="nav-item" [routerLinkActive]="['active']">
               <a class="nav-link waves-light" [routerLink]="['/home']" mdbRippleRadius>Home<span class="sr-only"></span></a>
           </li>
-          <li class="nav-item" [routerLinkActive]="['active']">
+          <li  *ngIf="authenticated" class="nav-item" [routerLinkActive]="['active']">
               <a class="nav-link waves-light" [routerLink]="['/floorplan']" mdbRippleRadius>Floor Plan</a>
           </li>
-          <li class="nav-item" [routerLinkActive]="['active']">
+          <li  *ngIf="authenticated" class="nav-item" [routerLinkActive]="['active']">
               <a class="nav-link waves-light" [routerLink]="['/roominfo']" mdbRippleRadius>Room Information</a>
           </li>
-
       </ul>
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item dropdown" dropdown>
-                <a dropdownToggle mdbRippleRadius class="nav-link dropdown-toggle " mdbRippleRadius>
-                       Login<i class="fa fa-user ml-2" aria-hidden="true"></i></a>
-                <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
-                    <a class="dropdown-item waves-light" mdbRippleRadius href="#">Account</a>
-                    <div class="divider dropdown-divider"></div>
-                    <a class="dropdown-item waves-light" mdbRippleRadius href="#">Log out</a>
-                </div>
-            </li>
-     </ul>
+
+     <ul class="navbar-nav navbar-right">
+        <li *ngIf="!authenticated" class="nav-link" ><a (click)="login()">Login<i class="fa fa-user ml-2"></i></a></li>
+        <li *ngIf="authenticated" class="nav-link"><a (click)="logout()">Logout</a></li>
+      </ul>
       <!-- Links -->
   </links>
   <!-- Collapsible content -->

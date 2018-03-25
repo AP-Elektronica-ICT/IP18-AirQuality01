@@ -5,7 +5,8 @@
 .legende .legend li { float: left; margin-right: 10px; }
 .legende .legend span { border: 1px solid #ccc; float: left; width: 20px; height: 20px; margin: 2px; }
 
-.legende .legend .first { background-color: #00ff00; }
-.legende .legend .second { background-color: #ffff00; }
-.legende .legend .third { background-color: #ff8800; }
-.legende .legend .fourth { background-color: #ff0000; }
+.legende .legend .first { background-color: #00bfff; }
+.legende .legend .second { background-color: #00ffbf; }
+.legende .legend .third { background-color: #40ff00; }
+.legende .legend .fourth { background-color: #ffbf00; }
+.legende .legend .fifth { background-color: #ff0000; }

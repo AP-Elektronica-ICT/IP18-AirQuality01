@@ -1,3 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>jQuery Tutorial - Pop-up div on hover</title>
+    <style type="text/css">
+      
+    </style>
+    
+  </head>
+  <body>
+    <div id="container">
+      <h1>Pop-up div on hover</h1>
+      <p>
+        To show hidden div, simply hover your mouse over
+        <a href="#" id="trigger">this link</a>.
+      </p>
+      
+      <!-- HIDDEN / POP-UP DIV -->
+      <div id="pop-up">
+        <h3>Pop-up div Successfully Displayed</h3>
+        <p>
+          This div only appears when the trigger link is hovered over. Otherwise
+          it is hidden from view.
+        </p>
+      </div>
+      
+    </div>
 <svg
 xmlns:dc="http://purl.org/dc/elements/1.1/"
 xmlns:cc="http://creativecommons.org/ns#"
@@ -117,131 +145,157 @@ sodipodi:docname="Floorplan.svg"
      inkscape:label="Layer 2"
      transform="translate(250,0)">
     <rect
-       style="fill:#25b221;fill-opacity:1;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       fill="#25b221"
+       class="trigger"
        id="rect4519"
        width="110"
        height="40"
        x="3.3622169"
        y="169.95668" />
     <rect
+       fill="#25b221"
+       class="trigger"
        y="265.58432"
        x="3.3622169"
        height="40"
        width="110"
-       id="rect4521"
-       style="fill:#25b221;fill-opacity:1;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       id="rect4521"/>
     <rect
-       style="fill:#2121b2;fill-opacity:1;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       fill="#2121b2"
+       class="trigger"
        id="rect4523"
        width="200"
        height="50"
        x="140.93837"
        y="170.00002" />
     <rect
+       fill="#25b221"
+       class="trigger"
        y="170.35715"
        x="342.42822"
        height="50"
        width="50"
        id="rect4525"
-       style="fill:#25b221;fill-opacity:1;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       />
     <rect
+       fill="#2121b2"
+       class="trigger"
        y="170.14796"
        x="394.0047"
        height="50"
        width="50"
        id="rect4527"
-       style="fill:#2121b2;fill-opacity:1;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+        />
     <rect
-       style="fill:#25b221;fill-opacity:1;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       fill="#25b221"
+       class="trigger"
        id="rect4529"
        width="100"
        height="50"
        x="445.64252"
        y="170.29587" />
     <rect
-       style="fill:#2121b2;fill-opacity:1;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       fill="#2121b2"
+       class="trigger"
        id="rect4531"
        width="50"
        height="50"
        x="547.15771"
        y="170.80096" />
     <rect
-       style="fill:#25b221;fill-opacity:1;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       fill="#25b221"
+       class="trigger"
        id="rect4533"
        width="25"
        height="55"
        x="597.9693"
        y="170.48714" />
     <rect
+       fill="#2121b2"
+       class="trigger"
        y="170.07819"
        x="623.29657"
        height="55"
        width="200"
        id="rect4535"
-       style="fill:#2121b2;fill-opacity:1;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       />
     <rect
+       fill="#2121b2"
+       class="trigger"
        y="255.5843"
        x="113.36222"
        height="50"
        width="115"
        id="rect3714"
-       style="fill:#2121b2;fill-opacity:1;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       />
     <rect
-       style="fill:#2121b2;fill-opacity:1;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       fill="#2121b2"
+       class="trigger"
        id="rect3718"
        width="115"
        height="50"
        x="228.36223"
        y="255.5843" />
     <rect
-       style="fill:#25b221;fill-opacity:1;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect3720"
+       fill="#25b221"
+       class="trigger"
        width="115"
        height="30"
        x="709.28204"
        y="275.58429" />
     <rect
+       fill="#2121b2"
+       class="trigger"
        y="245.58427"
        x="644.28204"
        height="60"
        width="65"
        id="rect26"
-       style="fill:#2121b2;fill-opacity:1;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+        />
     <rect
-       style="fill:#2121b2;fill-opacity:1;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       fill="#2121b2"
+       class="trigger"
        id="rect30"
        width="50"
        height="60"
        x="594.28204"
        y="245.58427" />
     <rect
+       fill="#2121b2"
+       class="trigger"
        y="255.58427"
        x="531.28204"
        height="50"
        width="50"
        id="rect32"
-       style="fill:#2121b2;fill-opacity:1;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+        />
     <rect
+       fill="#2121b2"
+       class="trigger"
        y="378.9465"
        x="555.17334"
        height="280"
        width="35"
        id="rect837"
-       style="fill:#2121b2;fill-opacity:1;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       />
     <rect
+       fill="#25b221"
+       class="trigger"
        y="245.45802"
        x="792.35217"
        height="31"
        width="30"
        id="rect835"
-       style="fill:#25b221;fill-opacity:1;stroke:#25b221;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       />
     <rect
+       fill="#2121b2"
+       class="trigger"
        y="255.5843"
        x="228.36223"
        height="50"
        width="115"
        id="rect838"
-       style="fill:#2121b2;fill-opacity:1;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       />
     <rect
        style="fill:#969695;fill-opacity:1;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect842"
@@ -265,147 +319,178 @@ sodipodi:docname="Floorplan.svg"
        x="823.29657"
        y="225.07817" />
     <rect
+       fill="#25b221"
+       class="trigger"
        y="169.1557"
        x="853.56775"
        height="30"
        width="65"
        id="rect848"
-       style="fill:#25b221;fill-opacity:1;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       />
     <rect
-       style="fill:#2121b2;fill-opacity:1;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       fill="#2121b2"
+       class="trigger"
        id="rect841"
        width="200"
        height="50"
        x="916.70215"
        y="213.44656" />
     <rect
-       style="fill:#25b221;fill-opacity:1;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       fill="#25b221"
+       class="trigger"
        id="rect843"
        width="30"
        height="50"
        x="1116.1617"
        y="213.59311" />
     <rect
+       fill="#2121b2"
+       class="trigger"
        y="213.57283"
        x="1145.5017"
        height="50"
        width="40"
        id="rect845"
-       style="fill:#2121b2;fill-opacity:1;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       />
     <rect
+       fill="#2121b2"
+       class="trigger"
        y="145.05898"
        x="1026.7021"
        height="55"
        width="250"
        id="rect847"
-       style="fill:#2121b2;fill-opacity:1;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       />
     <rect
-       style="fill:#25b221;fill-opacity:1;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       fill="#25b221"
+       class="trigger"
        id="rect856"
        width="35"
        height="70"
        x="921.30231"
        y="47.875061" />
     <rect
+       fill="#25b221"
+       class="trigger"
        y="55.043297"
        x="989.6391"
        height="115"
        width="35"
        id="rect858"
-       style="fill:#25b221;fill-opacity:1;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       />
     <rect
-       style="fill:#25b221;fill-opacity:1;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       fill="#25b221"
+       class="trigger"
        id="rect860"
        width="90"
        height="35"
        x="921.39154"
        y="2.5485561" />
     <rect
-       style="fill:#2121b2;fill-opacity:1;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       fill="#2121b2"
+       class="trigger"
        id="rect869"
        width="115"
        height="55"
        x="695.7998"
        y="416.80515" />
     <rect
+       fill="#25b221"
+       class="trigger"
        y="416.75308"
        x="810.5498"
        height="50"
        width="20"
        id="rect871"
-       style="fill:#25b221;fill-opacity:1;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       />
     <rect
-       style="fill:#25b221;fill-opacity:1;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       fill="#25b221"
+       class="trigger"
        id="rect873"
        width="20"
        height="50"
        x="831.258"
        y="417.25815" />
     <rect
+       fill="#2121b2"
+       class="trigger"
        y="404.17825"
        x="890.75928"
        height="50"
        width="85"
        id="rect875"
-       style="fill:#2121b2;fill-opacity:1;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+        />
     <rect
-       style="fill:#2121b2;fill-opacity:1;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       fill="#2121b2"
+       class="trigger"
        id="rect877"
        width="290"
        height="50"
        x="1039.6453"
        y="403.8465" />
     <rect
+       fill="#2121b2"
+       class="trigger"
        y="465.27509"
        x="1213.931"
        height="55"
        width="60"
        id="rect879"
-       style="fill:#2121b2;fill-opacity:1;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       />
     <rect
-       style="fill:#2121b2;fill-opacity:1;stroke:#2121b2;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       fill="#2121b2"
+       class="trigger"
        id="rect881"
        width="20"
        height="25"
        x="1273.8418"
        y="467.23938" />
     <rect
+       fill="#25b221"
+       class="trigger"
        y="465.1153"
        x="1179.0645"
        height="55"
        width="35"
        id="rect883"
-       style="fill:#25b221;fill-opacity:1;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       />
     <rect
-       style="fill:#25b221;fill-opacity:1;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       fill="#25b221"
+       class="trigger"
        id="rect887"
        width="35"
        height="55"
        x="1144.4216"
        y="465.1153" />
     <rect
+       fill="#25b221"
+       class="trigger"
        y="464.99887"
        x="930.86761"
        height="20"
        width="75"
        id="rect889"
-       style="fill:#25b221;fill-opacity:1;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      />
     <rect
-       style="fill:#25b221;fill-opacity:1;stroke:#25b221;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       fill="#25b221"
+       class="trigger"
        id="rect891"
        width="30"
        height="20"
        x="932.89056"
        y="484.38275" />
     <rect
+       fill="#2121b2"
+       class="trigger"
        y="506.448"
        x="900.73853"
        height="200"
        width="55"
        id="rect893"
-       style="fill:#2121b2;fill-opacity:1;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       />
     <rect
-       style="fill:#2121b2;fill-opacity:1;stroke:#2121b2;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       fill="#2121b2"
+       class="trigger"
        id="rect895"
        width="230"
        height="50"
@@ -454,12 +539,14 @@ sodipodi:docname="Floorplan.svg"
        x="1009.5303"
        y="468.52756" />
     <rect
+       fill="#25b221"
+       class="trigger"
        y="218.52809"
        x="26.21936"
        height="35"
        width="60"
        id="rect911"
-       style="fill:#25b221;fill-opacity:1;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       />
     <rect
        y="307.72717"
        x="602.64795"
@@ -532,3 +619,7 @@ sodipodi:docname="Floorplan.svg"
        y="404.88379" />
   </g>
 </svg>
+
+
+</body>
+</html>

@@ -16,16 +16,15 @@ body {
     color: #EB067B;
   }
   
-  div#container {
+  div.container {
     width: 580px;
     margin: 100px auto 0 auto;
     padding: 20px;
-    background: #000;
-    border: 1px solid #1a1a1a;
+    background: #ffffff;
   }
   
   /* HOVER STYLES */
-  div#pop-up {
+  div.pop-up {
     display: none;
     position: absolute;
     width: 280px;

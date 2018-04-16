@@ -16,6 +16,7 @@ export class NavBarComponent implements OnInit {
 user:Observable<firebase.User>;
 authenticated: boolean = false;
 user_Name : String;
+user_Photo : String;
 
   constructor(public af:AngularFireAuth, private router:Router) {
     this.af.authState.subscribe(
@@ -24,7 +25,8 @@ user_Name : String;
           this.user = af.authState;
           this.authenticated = true;
           this.user_Name = auth.displayName;
-          console.log(this.user_Name);
+          this.user_Photo = auth.photoURL;
+          console.log(this.user_Photo);
         }
       });
    }

@@ -22,7 +22,7 @@
 
      <ul class="navbar-nav navbar-right">
         <li *ngIf="!authenticated" class="nav-link" ><a (click)="login()">Login<i class="fa fa-user ml-2"></i></a></li>
-        <li *ngIf="authenticated" class="nav-link"><a (click)="logout()">Logout</a></li>
+        <li *ngIf="authenticated" class="nav-link"><a (click)="logout()">{{user_Name}}<i class="fa fa-user ml-2"></i></a></li>
       </ul>
       <!-- Links -->
   </links>

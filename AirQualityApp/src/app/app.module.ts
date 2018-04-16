@@ -19,6 +19,9 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
+import { SensorDataService } from '../../src/services/SensorDataService';
+import { HttpClientModule } from '@angular/common/http';
+
 export const firebaseConfig = {
   apiKey: "AIzaSyCSH_j3_2VwM0OhlWDPStBJvo3QpAXog50",
   authDomain: "airqualityapp-1e114.firebaseapp.com",
@@ -43,6 +46,7 @@ export const firebaseConfig = {
     BrowserModule,
     FormsModule,
     HttpModule,
+    HttpClientModule,
     MDBBootstrapModule.forRoot(),
     ChartsModule,
     RouterModule.forRoot([
@@ -55,7 +59,7 @@ export const firebaseConfig = {
     AngularFireAuthModule,
     AngularFireDatabaseModule   
   ],
-  providers: [],
+  providers: [SensorDataService],
   bootstrap: [AppComponent],
   schemas:[NO_ERRORS_SCHEMA]
 })

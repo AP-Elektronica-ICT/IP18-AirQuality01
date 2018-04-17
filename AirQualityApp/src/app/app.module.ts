@@ -14,6 +14,9 @@ import { RoomInformationComponent } from './room-information/room-information.co
 import { GraphComponent } from './room-information/graph/graph.component';
 import { DiagramComponent } from './room-information/diagram/diagram.component';
 import { TableComponent } from './room-information/table/table.component';
+import { MapComponent } from './floor-plan/map/map.component';
+import { LegendComponent } from './floor-plan/legend/legend.component';
+import { UploadZoneComponent } from './floor-plan/uploadZone/uploadZone.component';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -40,7 +43,10 @@ export const firebaseConfig = {
     RoomInformationComponent,
     GraphComponent,
     DiagramComponent,
-    TableComponent
+    TableComponent,
+    MapComponent,
+    LegendComponent,
+    UploadZoneComponent
   ],
   imports: [
     BrowserModule,

@@ -16,6 +16,4 @@ export class FloorPlanComponent implements OnInit {
   ngOnInit() {
   }
 
-  
-
 }

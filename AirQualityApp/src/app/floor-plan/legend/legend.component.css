@@ -1,0 +1,12 @@
+.legende{background-color: rgb(224, 214, 214);}
+.legende p{margin-left: 12px;}
+
+.legende .legend { list-style: none; }
+.legende .legend li { float: left; margin-right: 10px; }
+.legende .legend span { border: 1px solid #ccc; float: left; width: 20px; height: 20px; margin: 2px; }
+
+.legende .legend .first { background-color: #00bfff; }
+.legende .legend .second { background-color: #00ffbf; }
+.legende .legend .third { background-color: #40ff00; }
+.legende .legend .fourth { background-color: #ffbf00; }
+.legende .legend .fifth { background-color: #ff0000; }

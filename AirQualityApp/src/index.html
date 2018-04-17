@@ -12,9 +12,12 @@
     $(function() {
       var moveLeft = 20;
       var moveDown = 10;
+      console.log(moveLeft);
+      console.log(moveDown);
 
       $('rect.trigger').hover(function(e) {
         $('div.pop-up').show();
+        console.log(e);
       }, function() {
         $('div.pop-up').hide();
       });      

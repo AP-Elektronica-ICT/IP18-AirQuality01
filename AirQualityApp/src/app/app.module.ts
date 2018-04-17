@@ -24,6 +24,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { SensorDataService } from '../../src/services/SensorDataService';
 import { HttpClientModule } from '@angular/common/http';
+import { SettingsComponent } from './settings/settings.component';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyCSH_j3_2VwM0OhlWDPStBJvo3QpAXog50",
@@ -46,7 +47,8 @@ export const firebaseConfig = {
     TableComponent,
     MapComponent,
     LegendComponent,
-    UploadZoneComponent
+    UploadZoneComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
@@ -59,6 +61,7 @@ export const firebaseConfig = {
       { path: 'home', component: HomeComponent},
       { path: 'floorplan', component: FloorPlanComponent},
       { path: 'roominfo', component: RoomInformationComponent},
+      { path: 'settings', component: SettingsComponent},
       { path: '', redirectTo: 'home', pathMatch: 'full'}
     ], { useHash: true }),
     AngularFireModule.initializeApp(firebaseConfig),

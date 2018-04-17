@@ -1,0 +1,36 @@
+<div class="row">
+<div class=" col-md-2">
+
+</div>
+<div class="card  col-md-8">
+ <div class="form-group">
+  
+  <select class="form-control" [(ngModel)]="roomNr">
+    <option *ngFor="let r of room" value="{{r}}">Room {{r}}</option>
+  </select>
+  <div class="card-body">
+      <p>Minimum Temperature in °C<input  type="number" [(ngModel)] = "MiniTemp"  value="{{MiniTemp}}"></p>
+  </div>
+
+  <div class="card-body">
+      <p>Maximum Temperature in °C<input  type="number" [(ngModel)] = "MaxiTemp"  value="{{MaxiTemp}}"></p>
+  </div>
+
+  <div class="card-body">
+      <p>Minimum Humidity in %<input  type="number" [(ngModel)] = "MiniHum"  value="{{MiniHum}}"></p>
+  </div>
+  <div class="card-body">
+      <p>Maximum Humidity in %<input  type="number" [(ngModel)] = "MaxiHum"  value="{{MaxiHum}}"></p>
+  </div>
+
+  <button type="button" (click)="opslaan()" class="btn btn-primary waves-light" mdbRippleRadius>Opslaan</button>
+  
+  
+ </div>
+    
+  </div>
+
+<div class=" col-md-2">
+
+</div>
+</div>

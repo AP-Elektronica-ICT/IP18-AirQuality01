@@ -18,6 +18,9 @@
           <li  *ngIf="authenticated" class="nav-item" [routerLinkActive]="['active']">
               <a class="nav-link waves-light" [routerLink]="['/roominfo']" mdbRippleRadius>Room Information</a>
           </li>
+          <li  *ngIf="authenticated" class="nav-item" [routerLinkActive]="['active']">
+            <a class="nav-link waves-light" [routerLink]="['/settings']" mdbRippleRadius>Settings</a>
+        </li>
       </ul>
 
      <ul class="navbar-nav navbar-right">

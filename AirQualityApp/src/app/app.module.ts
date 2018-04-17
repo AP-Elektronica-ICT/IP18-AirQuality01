@@ -16,6 +16,7 @@ import { DiagramComponent } from './room-information/diagram/diagram.component';
 import { TableComponent } from './room-information/table/table.component';
 import { MapComponent } from './floor-plan/map/map.component';
 import { LegendComponent } from './floor-plan/legend/legend.component';
+import { UploadZoneComponent } from './floor-plan/uploadZone/uploadZone.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { LegendComponent } from './floor-plan/legend/legend.component';
     DiagramComponent,
     TableComponent,
     MapComponent,
-    LegendComponent
+    LegendComponent,
+    UploadZoneComponent
   ],
   imports: [
     BrowserModule,

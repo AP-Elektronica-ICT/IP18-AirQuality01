@@ -4,7 +4,7 @@
 </div>
 <div class="card  col-md-8">
  <div class="form-group">
-  
+  <h4>Choose room</h4>
   <select class="form-control" [(ngModel)]="roomNr">
     <option *ngFor="let r of room" value="{{r}}">Room {{r}}</option>
   </select>
@@ -21,6 +21,12 @@
   </div>
   <div class="card-body">
       <p>Maximum Humidity in %<input  type="number" [(ngModel)] = "MaxiHum"  value="{{MaxiHum}}"></p>
+  </div>
+  <div class="card-body">
+    <p>Maximum CO2 lvl in ppm<input  type="number" [(ngModel)] = "MaxiCO2"  value="{{MaxiCO2}}"></p>
+  </div>
+  <div class="card-body">
+    <p>Check light lvl at<input  type="number" [(ngModel)] = "Light"  value="{{Light}}"></p>
   </div>
 
   <button type="button" (click)="opslaan()" class="btn btn-primary waves-light" mdbRippleRadius>Opslaan</button>

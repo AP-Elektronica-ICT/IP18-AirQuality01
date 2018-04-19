@@ -25,6 +25,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { SensorDataService } from '../../src/services/SensorDataService';
 import { HttpClientModule } from '@angular/common/http';
 import { SettingsComponent } from './settings/settings.component';
+import { MapTwoComponent } from './floor-plan/mapTwo/mapTwo.component';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyCSH_j3_2VwM0OhlWDPStBJvo3QpAXog50",
@@ -46,6 +47,7 @@ export const firebaseConfig = {
     DiagramComponent,
     TableComponent,
     MapComponent,
+    MapTwoComponent,
     LegendComponent,
     UploadZoneComponent,
     SettingsComponent

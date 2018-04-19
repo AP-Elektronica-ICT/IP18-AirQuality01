@@ -4,9 +4,10 @@
             <div class="card-body">
                 <h4 class="card-title">Room 1</h4>
                 <p class="card-text">
-                    Average temperature:<br>
-                    Average CO² level:<br>
-                    Average Humidity:
+                    <b>Average temperature:</b> {{ avgTemp | number:'2.0-2' }} °C<br>
+                    <b>Average Humidity:</b> {{ avgHum | number:'2.0-2' }} %<br>
+                    <b>Average CO² level:</b> {{ avgCO2 | number:'2.0-2' }} ppm
+
                 </p>
             </div>
         </div>

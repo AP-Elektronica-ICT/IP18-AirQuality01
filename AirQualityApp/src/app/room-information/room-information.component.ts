@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { SensorDataService, IRootObject } from '../../services/SensorDataService';
+import { DecimalPipe } from '@angular/common';
+import { Pipe } from '@angular/core';
 
 @Component({
   selector: 'app-room-information',
@@ -7,9 +10,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RoomInformationComponent implements OnInit {
 
-  constructor() { }
+  values: IRootObject;
+
+  avgTemp: number = 0;
+  avgHum: number = 0;
+  avgCO2: number = 0;
+
+  constructor(private service: SensorDataService) {
+
+   }
 
   ngOnInit() {
+    this.service.getData().subscribe(d => { 
+      this.values = d;
+      for(let i = 0; i <= this.values.data.length; i++){
+        this.avgTemp += (parseFloat(this.values.data[i].attributes.temperature)/this.values.data.length);
+        this.avgHum += (parseFloat(this.values.data[i].attributes.humidity)/this.values.data.length);
+        this.avgCO2 += (parseFloat(this.values.data[i].attributes.co2)/this.values.data.length); 
+      };
+    })
     
   }
 

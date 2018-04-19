@@ -9,24 +9,27 @@ import 'rxjs/add/operator/map';
  
 @Injectable()
 export class SensorDataService {
-    private apiUrl = 'https://air.kiisu.club/v1/devices';
-    data: any = {};
+    private apiUrl = 'https://air.kiisu.club/v1/device/air-3/data?from_date=2018-04-17T11:00&to_date=2018-4-17T12:00';
+    //data: any = {};
 
     constructor(private http: HttpClient) {
         console.log('Test from API');
         this.getData();
     }
 
-    getData() : Observable<IDatum>{
-        return this.http.get<IDatum>(this.apiUrl)
+    getData() : Observable<IRootObject>{
+        return this.http.get<IRootObject>(this.apiUrl)
             //.map((res: Response) => res.json())
     }
 }
 
 export interface IAttributes {
-    device_id: string;
-    id: number;
-    data_url: string;
+    temperature: string;
+    humidity: string;
+    co2: string;
+    sound?: any;
+    light: string;
+    created_at: string;
 }
 
 export interface IDatum {

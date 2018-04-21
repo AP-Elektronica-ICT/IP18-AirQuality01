@@ -6,12 +6,23 @@
  <div class="form-group">
  <div *ngFor="let t of sensors | async" class="card-body">
      <h4>Room {{t.id}}</h4>
-     <p>temperatuur: {{t.temp}}</p>
-     <input type="number" #updatenumber value = "{{t.temp}}" (click)="updateTemp(t.key,updatenumber.value)"/>
-
-     <p>maxtemperatuur: {{t.maxtemp}}</p>
-     <input type="number" #updatenumber2 value = "{{t.maxtemp}}" (click)="updateMaxTemp(t.key,updatenumber2.value)"/>
+     <hr style="BORDER-RIGHT: medium none; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; HEIGHT: 1px"> 
+     <p>temperatuur:&emsp; 
+     <input type="number" style="width:3em" #updatenumber value = "{{t.temp}}" (click)="updateTemp(t.key,updatenumber.value)"/>
      
+     &emsp; maxtemperatuur:&emsp;
+     <input type="number" style="width:3em" #updatenumber2 value = "{{t.maxtemp}}" (click)="updateMaxTemp(t.key,updatenumber2.value)"/>
+     
+     &emsp;Humidity:&emsp;
+     <input type="number" style="width:3em" #updatenumber3 value = "{{t.hum}}" (click)="updateHum(t.key,updatenumber3.value)"/>
+     &emsp;Maximum Humidity:&emsp;
+     <input type="number"  style="width:3em" #updatenumber4 value = "{{t.maxhum}}" (click)="updateMaxHum(t.key,updatenumber4.value)"/>
+     
+     &emsp;CO2:&emsp;
+     <input type="number" style="width:3em" #updatenumber5 value = "{{t.co2}}" (click)="updateCO2m(t.key,updatenumber5.value)"/>
+     
+     &emsp;Light:&emsp;
+     <input type="number" style="width:3em" #updatenumber6 value = "{{t.light}}" (click)="updateLight(t.key,updatenumber6.value)"/></p>
  </div>
  </div>
     

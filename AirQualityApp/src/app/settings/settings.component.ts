@@ -62,6 +62,18 @@ nr : number = 1;
   updateMaxTemp(key: string, newText: string) {
     this.room1.update(key, { maxtemp: newText });
   }
+  updateCO2(key: string, newText: string) {
+    this.room1.update(key, { co2: newText });
+  }
+  updateHum(key: string, newText: string) {
+    this.room1.update(key, { hum: newText });
+  }
+  updateMaxHum(key: string, newText: string) {
+    this.room1.update(key, { maxhum: newText });
+  }
+  updateLight(key: string, newText: string) {
+    this.room1.update(key, { light: newText });
+  }
   opslaan()
   {
     console.log("test  " + this.nr);

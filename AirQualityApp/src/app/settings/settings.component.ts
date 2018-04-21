@@ -1,5 +1,9 @@
 import { Component, OnInit} from '@angular/core';
-
+import {AngularFireDatabase,AngularFireList} from 'angularfire2/database'
+import {Observable} from 'rxjs/Observable'
+import 'rxjs/add/operator/map';
+import { AngularFireAction } from 'angularfire2/database/interfaces';
+import { connect } from 'tls';
 
 @Component({
   selector: 'app-settings',
@@ -7,6 +11,9 @@ import { Component, OnInit} from '@angular/core';
   styleUrls: ['./settings.component.css']
 })
 export class SettingsComponent implements OnInit {
+room1:AngularFireList<any>;
+sensors: Observable<any[]>;
+
 room: number[] = [1,2,3,4,5,6];
 
 MinimumTemperatureValues : number[] = [5,5,5,5,5,5];
@@ -28,8 +35,13 @@ LightLevel :number[] = [200,200,200,200,200,200];
 Light: number = this.LightLevel[0];
 nr : number = 1;
 
-  constructor() { }
+  constructor(private db: AngularFireDatabase) { }
   ngOnInit() {
+    this.room1 = this.db.list('/room');
+    this.sensors = this.room1.snapshotChanges().map(changes => {
+      return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
+    });
+    
   }
 
   get roomNr()
@@ -42,6 +54,13 @@ nr : number = 1;
     this.nr = value;
     console.log("set" + this.nr);
     this.changeValue();
+  }
+
+  updateTemp(key: string, newText: string) {
+    this.room1.update(key, { temp: newText });
+  }
+  updateMaxTemp(key: string, newText: string) {
+    this.room1.update(key, { maxtemp: newText });
   }
   opslaan()
   {

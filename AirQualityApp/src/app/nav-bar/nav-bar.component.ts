@@ -1,6 +1,7 @@
 import { Component, OnInit,Output,Input } from '@angular/core';
 import {Observable} from "rxjs/Observable";
 import {AngularFireAuth} from "angularfire2/auth";
+import {AngularFireDatabase} from "angularfire2/database"
 import * as firebase from "firebase/app";
 import {Router} from "@angular/router";
 import {EventEmitter} from "events";
@@ -14,6 +15,7 @@ import { window } from 'angular-bootstrap-md/utils/facade/browser';
 })
 export class NavBarComponent implements OnInit {
 user:Observable<firebase.User>;
+
 authenticated: boolean = false;
 user_Name : String;
 user_Photo : String;
@@ -32,7 +34,10 @@ user_Photo : String;
    }
 
   ngOnInit() {
+   
   }
+
+
 
   login(){
     this.af.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())

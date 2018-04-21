@@ -1,0 +1,15 @@
+.navbar-nav > li > .dropdown-menu {background-color: #000000 !important}
+.navbar-nav > li > .dropdown-menu:hover {background: #000000 !important}
+
+.dropdown-menu a{
+    color: #FFFFFF !important;
+}
+
+.dropdown .dropdown-menu .dropdown-item:hover{
+    background-color:#000000 !important;
+}
+
+.navbar.navbar-dark .navbar-nav .nav-item .nav-link{
+    background-color: #000000 !important;
+    color: #ffffff !important;
+}

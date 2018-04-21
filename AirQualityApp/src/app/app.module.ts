@@ -19,7 +19,7 @@ import { LegendComponent } from './floor-plan/legend/legend.component';
 import { UploadZoneComponent } from './floor-plan/uploadZone/uploadZone.component';
 
 import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { SensorDataService } from '../../src/services/SensorDataService';
@@ -70,7 +70,7 @@ export const firebaseConfig = {
     AngularFireAuthModule,
     AngularFireDatabaseModule   
   ],
-  providers: [SensorDataService],
+  providers: [SensorDataService,AngularFireDatabase],
   bootstrap: [AppComponent],
   schemas:[NO_ERRORS_SCHEMA]
 })

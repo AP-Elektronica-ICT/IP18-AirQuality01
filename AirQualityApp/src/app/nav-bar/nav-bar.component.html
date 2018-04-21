@@ -25,8 +25,20 @@
 
      <ul class="navbar-nav navbar-right">
         <li *ngIf="!authenticated" class="nav-link" ><a (click)="login()">Login<i class="fa fa-user ml-2"></i></a></li>
-        <li *ngIf="authenticated" class="nav-link"><a (click)="logout()">{{user_Name}}  <img src="{{user_Photo}}" height="25" width="25"/></a></li>
-      </ul>
+
+        <li *ngIf="authenticated" class="nav-item dropdown" dropdown>
+            <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+            Basic dropdown<span class="caret"></span></a>
+            <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+                <a class="dropdown-item waves-light" mdbWavesEffect href="#">Settings</a>
+                <div class="divider dropdown-divider"></div>
+                <a class="dropdown-item waves-light" mdbWavesEffect href="#"><a (click)="logout()">Logout</a></a>
+            </div>
+        </li>
+        
+        
+      
+    </ul>
       <!-- Links -->
   </links>
   <!-- Collapsible content -->

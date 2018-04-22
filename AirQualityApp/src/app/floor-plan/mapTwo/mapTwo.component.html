@@ -7,7 +7,33 @@
           Humidity: <br>
         </p>
       </div>
+
+      <button type="button" class="btn btn-primary relative waves-light" (click)="basicModal.show()" mdbWavesEffect>Launch demo modal</button>
       
+      <div mdbModal #basicModal="mdb-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true" [config]="{backdrop: false, ignoreBackdropClick: true}">
+          <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
+                          <span aria-hidden="true">×</span>
+                      </button>
+                      <h4 class="modal-title w-100" id="myModalLabel">Give room specifications</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p>height: <input type="text" style="width:2em" #height [(ngModel)] = "heighta" value="{{heighta}}"/></p>
+                    <p>width: <input type="text" style="width:2em" #width [(ngModel)] = "widtha" value="{{widtha}}"/></p>
+                    <p>x: <input type="text" style="width:2em" #width [(ngModel)] = "X" value="{{X}}"/></p>
+                    <p>y: <input type="text" style="width:2em" #width [(ngModel)] = "Y" value="{{Y}}"/></p>
+                    <p>color: <input type="text" style="width:2em" #width [(ngModel)] = "Color" value="{{Color}}"/></p>
+                    <p>ID <input type="text" style="width:2em" #width [(ngModel)] = "ID" value="{{ID}}"/></p>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary waves-light" aria-label="Close" (click)="basicModal.hide()" mdbWavesEffect>Close</button>
+                      <button type="button" class="btn btn-primary relative waves-light" (click)="AddRoom()" mdbWavesEffect>Save changes</button>
+                  </div>
+              </div>
+          </div>
+      </div>
     
       <div class="d-flex">
 
@@ -139,22 +165,16 @@
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="Layer 2">
-    <rect
+    <rect *ngFor ="let room of RoomItems|async"
+    [ngStyle] ="{'fill':room.color}"
        class="trigger"
-       y="3.4118755"
-       x="206.12746"
-       height="50"
-       width="230"
-       id="rect3714-8"
-       style="fill:#2121b2;fill-opacity:1;stroke:#2121b2;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-    <rect
-       y="3.3981192"
-       x="439.86261"
-       class="trigger"
-       height="50"
-       width="820"
-       id="rect3714-8-2"
-       style="fill:#2121b2;fill-opacity:1;stroke:#2121b2;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       [attr.y]="room.y"
+       [attr.x]="room.x"
+       [attr.height]="room.height"
+       [attr.width]="room.width"
+       [attr.id]="room.id"
+       />
+    
     <rect
        y="55.819889"
        x="3.3875332"
@@ -653,7 +673,8 @@
        inkscape:transform-center-x="0.079274091"
        inkscape:transform-center-y="0.24604077"
        height="31.843969" />
+       
   </g>
+  
 </svg>
-
 </div>

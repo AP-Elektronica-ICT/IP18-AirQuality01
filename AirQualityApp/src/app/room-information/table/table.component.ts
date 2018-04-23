@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Pipe, PipeTransform } from '@angular/core';
 import { DecimalPipe } from '@angular/common';
 import { SensorDataService, IRootObject, IDatum, IAttributes } from '../../../services/SensorDataService';
@@ -18,7 +18,7 @@ export class TableComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.service.getVaryData(10).subscribe(d => {
+    this.service.getVaryData().subscribe(d => {
       this.values = d});
   }
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { SensorDataService, IRootObject } from '../../services/SensorDataService';
 import { DecimalPipe } from '@angular/common';
 import { Pipe } from '@angular/core';
@@ -12,17 +12,22 @@ export class RoomInformationComponent implements OnInit {
 
   values: IRootObject;
 
+  //Aantal uren van sensor data weergeven
+  //displayTime: number = 1;
+
   avgTemp: number = 0;
   avgHum: number = 0;
   avgCO2: number = 0;
   avgLight: number = 0;
+
+  displayTime: number;
 
   constructor(private service: SensorDataService) {
 
    }
 
   ngOnInit() {
-    this.service.getHourData().subscribe(d => { 
+    this.service.getVaryData().subscribe(d => { 
       this.values = d;
       for(let i = 0; i < this.values.data.length; i++){
         this.avgTemp += (parseFloat(this.values.data[i].attributes.temperature)/this.values.data.length);
@@ -31,6 +36,7 @@ export class RoomInformationComponent implements OnInit {
         this.avgLight += (parseFloat(this.values.data[i].attributes.light)/this.values.data.length);
       };
     })
+    this.displayTime = this.service.period;
   }
 
   public btnGraphState: string = "btn btn-primary";

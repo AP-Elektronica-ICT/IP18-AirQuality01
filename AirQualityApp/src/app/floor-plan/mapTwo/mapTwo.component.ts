@@ -20,6 +20,8 @@ Y:String="0";
 Color:String="0";
 ID:String="0";
 Room:string;
+
+IDD:String="0";
 color= "reds"; // default waarde 
 //Binnenhalen van Value AirQuality en toewijzen aan Room
 //Hieronder nog fictieve waarden
@@ -77,7 +79,12 @@ AirQuality value verdelen in 5 groepen(nog fictieve waarden)
     this.Room = "room" + this.ID;
 
     this.RoomItemsRef.update(this.Room,{color:this.Color,id:this.ID,height:this.heighta,width:this.widtha,x:this.X,y:this.Y});
-    
+  }
+
+  DeleteRoom()
+  {
+    this.Room = "room" + this.IDD;
+    this.RoomItemsRef.remove(this.Room);
   }
   test(test:String)
   {

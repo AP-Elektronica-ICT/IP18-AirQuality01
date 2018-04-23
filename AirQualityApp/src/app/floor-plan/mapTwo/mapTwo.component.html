@@ -20,12 +20,12 @@
                       <h4 class="modal-title w-100" id="myModalLabel">Give room specifications</h4>
                   </div>
                   <div class="modal-body">
-                    <p>height: <input type="text" style="width:2em" #height [(ngModel)] = "heighta" value="{{heighta}}"/></p>
-                    <p>width: <input type="text" style="width:2em" #width [(ngModel)] = "widtha" value="{{widtha}}"/></p>
-                    <p>x: <input type="text" style="width:2em" #width [(ngModel)] = "X" value="{{X}}"/></p>
-                    <p>y: <input type="text" style="width:2em" #width [(ngModel)] = "Y" value="{{Y}}"/></p>
-                    <p>color: <input type="text" style="width:2em" #width [(ngModel)] = "Color" value="{{Color}}"/></p>
-                    <p>ID <input type="text" style="width:2em" #width [(ngModel)] = "ID" value="{{ID}}"/></p>
+                    <p>height: <input type="text" style="width:5em" #height [(ngModel)] = "heighta" value="{{heighta}}"/></p>
+                    <p>width: <input type="text" style="width:5em" #width [(ngModel)] = "widtha" value="{{widtha}}"/></p>
+                    <p>x: <input type="text" style="width:5em" #width [(ngModel)] = "X" value="{{X}}"/></p>
+                    <p>y: <input type="text" style="width:5em" #width [(ngModel)] = "Y" value="{{Y}}"/></p>
+                    <p>color: <input type="text" style="width:5em" #width [(ngModel)] = "Color" value="{{Color}}"/></p>
+                    <p>ID <input type="text" style="width:5em" #width [(ngModel)] = "ID" value="{{ID}}"/></p>
                   </div>
                   <div class="modal-footer">
                       <button type="button" class="btn btn-secondary waves-light" aria-label="Close" (click)="basicModal.hide()" mdbWavesEffect>Close</button>
@@ -173,9 +173,10 @@
        [attr.height]="room.height"
        [attr.width]="room.width"
        [attr.id]="room.id"
+       (click) = "test(room.id)"
        />
     
-    <rect
+  <!--  <rect
        y="55.819889"
        x="3.3875332"
        class="trigger"
@@ -184,7 +185,7 @@
        id="rect3714-5"
        style="fill:#2121b2;fill-opacity:1;stroke:#2121b2;stroke-width:1.98935199;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        inkscape:transform-center-x="0.71434127"
-       inkscape:transform-center-y="0.353321" />
+       inkscape:transform-center-y="0.353321" />-->
     <rect
        y="64.390068"
        x="171.99396"

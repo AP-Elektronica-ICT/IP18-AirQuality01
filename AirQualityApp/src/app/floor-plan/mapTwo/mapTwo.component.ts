@@ -78,6 +78,8 @@ AirQuality value verdelen in 5 groepen(nog fictieve waarden)
     this.RoomItemsRef.update(this.Room,{color:this.Color,id:this.ID,height:this.heighta,width:this.widtha,x:this.X,y:this.Y});
     
   }
+  test(test:String)
+  {console.log(test);}
 }
 
  class Room{

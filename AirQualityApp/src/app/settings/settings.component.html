@@ -10,34 +10,33 @@
      <div class="container">
      <div class="row">
      <div class="line">
-     <p>Temperature:</p> 
      <input type="number" style="width:5em" #updatenumber value = "{{t.temp}}" (click)="updateTemp(t.key,updatenumber.value,t.temp)"/>
+     <p>Minimum Temperature:</p> 
     </div>
-     
-    <div class="line">
-     <p>Maximum Temperature:</p>
-     <input type="number" style="width:5em" #updatenumber2 value = "{{t.maxtemp}}" (click)="updateMaxTemp(t.key,updatenumber2.value)"/>
-    </div>
-     
      <div class="line">
-     <p>Humidity:</p>
+     <p>Minimum Humidity:</p>
      <input type="number" style="width:5em" #updatenumber3 value = "{{t.hum}}" (click)="updateHum(t.key,updatenumber3.value)"/>
     </div>
+    <div class="line">
+        <p>Minimum CO2:</p>
+        <input type="number" style="width:5em" #updatenumber5 value = "{{t.co2}}" (click)="updateCO2(t.key,updatenumber5.value)"/>
+       </div>
     </div>
     <div class="row">
+        <div class="line">
+            <p>Maximum Temperature:</p>
+            <input type="number" style="width:5em" #updatenumber2 value = "{{t.maxtemp}}" (click)="updateMaxTemp(t.key,updatenumber2.value)"/>
+           </div>
      <div class="line">
      <p>Maximum Humidity:</p>
      <input type="number"  style="width:5em" #updatenumber4 value = "{{t.maxhum}}" (click)="updateMaxHum(t.key,updatenumber4.value)"/>
     </div>
      
-     <div class="line">
-     <p>CO2:</p>
-     <input type="number" style="width:5em" #updatenumber5 value = "{{t.co2}}" (click)="updateCO2(t.key,updatenumber5.value)"/>
-    </div>
+     
      
      <div class="line">
-     <p>Light:</p>
-     <input type="number" style="width:5em" #updatenumber6 value = "{{t.light}}" (click)="updateLight(t.key,updatenumber6.value)"/>
+     <p>Maximum CO2:</p>
+     <input type="number" style="width:5em" #updatenumber6 value = "{{t.maxCo2}}" (click)="updateMaxCo2(t.key,updatenumber6.value)"/>
     </div>
     </div>
  </div>

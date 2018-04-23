@@ -83,8 +83,8 @@ nr : number = 1;
   updateMaxHum(key: string, newText: string) {
     this.room1.update(key, { maxhum: newText });
   }
-  updateLight(key: string, newText: string) {
-    this.room1.update(key, { light: newText });
+  updateMaxCo2(key: string, newText: string) {
+    this.room1.update(key, { maxCo2: newText });
   }
   opslaan()
   {

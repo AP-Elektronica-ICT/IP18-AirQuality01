@@ -7,28 +7,41 @@
  <div *ngFor="let t of sensors | async" class="card-body">
      <h4>Room {{t.id}}</h4>
      <hr style="BORDER-RIGHT: medium none; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; HEIGHT: 1px"> 
-     <p>temperatuur:&emsp; 
-     <input type="number" style="width:3em" #updatenumber value = "{{t.temp}}" (click)="updateTemp(t.key,updatenumber.value)"/>
+     <div class="container">
+     <div class="row">
+     <div class="line">
+     <p>Temperature:</p> 
+     <input type="number" style="width:5em" #updatenumber value = "{{t.temp}}" (click)="updateTemp(t.key,updatenumber.value)"/>
+    </div>
      
-     &emsp; maxtemperatuur:&emsp;
-     <input type="number" style="width:3em" #updatenumber2 value = "{{t.maxtemp}}" (click)="updateMaxTemp(t.key,updatenumber2.value)"/>
+    <div class="line">
+     <p>Maximum Temperature:</p>
+     <input type="number" style="width:5em" #updatenumber2 value = "{{t.maxtemp}}" (click)="updateMaxTemp(t.key,updatenumber2.value)"/>
+    </div>
      
-     &emsp;Humidity:&emsp;
-     <input type="number" style="width:3em" #updatenumber3 value = "{{t.hum}}" (click)="updateHum(t.key,updatenumber3.value)"/>
-     &emsp;Maximum Humidity:&emsp;
-     <input type="number"  style="width:3em" #updatenumber4 value = "{{t.maxhum}}" (click)="updateMaxHum(t.key,updatenumber4.value)"/>
+     <div class="line">
+     <p>Humidity:</p>
+     <input type="number" style="width:5em" #updatenumber3 value = "{{t.hum}}" (click)="updateHum(t.key,updatenumber3.value)"/>
+    </div>
+    </div>
+    <div class="row">
+     <div class="line">
+     <p>Maximum Humidity:</p>
+     <input type="number"  style="width:5em" #updatenumber4 value = "{{t.maxhum}}" (click)="updateMaxHum(t.key,updatenumber4.value)"/>
+    </div>
      
-     &emsp;CO2:&emsp;
-     <input type="number" style="width:3em" #updatenumber5 value = "{{t.co2}}" (click)="updateCO2m(t.key,updatenumber5.value)"/>
+     <div class="line">
+     <p>CO2:</p>
+     <input type="number" style="width:5em" #updatenumber5 value = "{{t.co2}}" (click)="updateCO2m(t.key,updatenumber5.value)"/>
+    </div>
      
-     &emsp;Light:&emsp;
-     <input type="number" style="width:3em" #updatenumber6 value = "{{t.light}}" (click)="updateLight(t.key,updatenumber6.value)"/></p>
+     <div class="line">
+     <p>Light:</p>
+     <input type="number" style="width:5em" #updatenumber6 value = "{{t.light}}" (click)="updateLight(t.key,updatenumber6.value)"/>
+    </div>
+    </div>
  </div>
  </div>
-    
-  </div>
-
-<div class=" col-md-2">
-
 </div>
+  </div>
 </div>

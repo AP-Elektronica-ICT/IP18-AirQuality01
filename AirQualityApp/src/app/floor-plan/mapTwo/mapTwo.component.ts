@@ -4,6 +4,7 @@ import {Observable} from 'rxjs/Observable';
 import {Router} from '@angular/router';
 import 'rxjs/add/operator/map';
 import {settingsData} from '../../../services/settingsData';
+import { SensorDataService, IRootObject } from '../../../services/SensorDataService';
 
 
 @Component({
@@ -23,8 +24,11 @@ Color:String="0";
 ID:String="0";
 Room:string;
 
+values: IRootObject;
+
 Light:string[];
 Light2:number[] = [0,0,0,0,0,0,0,0];
+lightData:number = 0;
 
 temp:string[];
 temp2:number[] = [0,0,0,0,0,0,0,0];
@@ -51,7 +55,7 @@ color= "reds"; // default waarde
 
 Room1 = new Room(41);
 
-  constructor(private db:AngularFireDatabase, private router:Router,private Data:settingsData) { }
+  constructor(private db:AngularFireDatabase, private router:Router,private Data:settingsData,private service:SensorDataService) { }
 /* 
 AirQuality value verdelen in 5 groepen(nog fictieve waarden)
   * 0  - 10 ver onder de goede waarde  ==> blauwe kleur
@@ -61,16 +65,13 @@ AirQuality value verdelen in 5 groepen(nog fictieve waarden)
   * 41 - 50 ver boven de goede waarde  ==> rode kleur
 */
   ngOnInit() {
+    this.AssignValue();
     this.RoomItemsRef = this.db.list('/DrawRoom');
     this.RoomItems = this.RoomItemsRef.snapshotChanges().map(changes => {
       return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
     });
 
-
-    
     console.log(this.Data.getValueLight());
-    
-
 
     if((this.Room1.getValue() > 0)&&(this.Room1.getValue()<=10))
     {
@@ -92,8 +93,56 @@ AirQuality value verdelen in 5 groepen(nog fictieve waarden)
     {
       this.color = "#ff0000";
     }
-  }
 
+
+     
+
+  }
+  AssignValue()
+  {
+    this.service.getLatestData().subscribe(d => { 
+      this.values = d;
+      this.lightData = parseFloat(this.values.data[0].attributes.light);
+      console.log(this.lightData);
+
+      if((this.lightData > 0)&&(this.lightData<=20))
+      {
+        this.RoomItemsRef.update("room2",{color:"#0F2D00"});
+      }
+      if((this.lightData > 20)&&(this.lightData<=40))
+      {
+        this.RoomItemsRef.update("room2",{color:"#153F00"});
+      }
+      if((this.lightData > 40)&&(this.lightData<=65))
+      {
+        this.RoomItemsRef.update("room2",{color:"#205F00"});
+      }
+      if((this.lightData > 60)&&(this.lightData<=490))
+      {
+        this.RoomItemsRef.update("room2",{color:"#38A202"});
+      }
+      if((this.lightData > 490)&&(this.lightData<=510))
+      {
+        this.RoomItemsRef.update("room2",{color:"#39A701"});
+      }
+      if((this.lightData > 510)&&(this.lightData<=520))
+      {
+        this.RoomItemsRef.update("room2",{color:"#40C000"});
+      }
+      if(this.lightData > 520)
+      {
+        this.RoomItemsRef.update("room2",{color:"#51F102"});
+      }
+      
+
+
+
+
+
+
+
+    });
+  }
   AddRoom()
   {
     console.log(this.heighta);

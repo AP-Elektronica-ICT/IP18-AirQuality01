@@ -24,6 +24,7 @@
     "@angular/router": "^4.2.4",
     "@types/lodash": "4.14.89",
     "@types/mathjs": "0.0.35",
+    "ajv": "^6.0.0",
     "angular-bootstrap-md": "4.3.7",
     "angularfire2": "^5.0.0-rc.3",
     "chart.js": "2.5.0",

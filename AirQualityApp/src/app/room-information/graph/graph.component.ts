@@ -12,7 +12,6 @@ export class GraphComponent implements OnInit {
 
   valuesLength : number;
 
-  //chartDatasets: Array<any> = [];
   dates : Array<any> = [];
   temperatures : Array<any> = [];
   chartTemp : Array<any> = [];
@@ -20,10 +19,11 @@ export class GraphComponent implements OnInit {
   chartHumid : Array<any> = [];
   CO2Levels : Array<any> = [];
   chartCO2 : Array<any> = [];
+  lightLevels : Array<any> = [];
+  chartLight : Array<any> = [];
 
-  testData: Array<any> = [65, 59, 80, 81, 56, 55, 40, 1, 100, 123, 123, 32, 10, 1, 5, 20];
   labelData: Array<any> = [];
-  labels: Array<any> = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'];
+
 
   constructor(private service: SensorDataService) { 
     
@@ -41,11 +41,13 @@ export class GraphComponent implements OnInit {
         this.temperatures[i] = this.values.data[i].attributes.temperature;
         this.humiditiyLevels[i] = this.values.data[i].attributes.humidity;
         this.CO2Levels[i] = this.values.data[i].attributes.co2;
+        this.lightLevels[i] = this.values.data[i].attributes.light;
         this.dates[i] = this.values.data[i].attributes.created_at;
       };
       this.chartTemp = [{ data: this.temperatures, label: 'Temperature' }];
       this.chartHumid = [{ data: this.humiditiyLevels, label: 'Humidity' }];
       this.chartCO2 = [{ data: this.CO2Levels, label: 'CO2 level' }];
+      this.chartLight = [{ data: this.lightLevels, label: 'Light level' }];
     });
   }
 

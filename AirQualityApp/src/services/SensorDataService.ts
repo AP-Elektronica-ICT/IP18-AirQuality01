@@ -9,7 +9,7 @@ import 'rxjs/add/operator/map';
  
 @Injectable()
 export class SensorDataService {
-    private apiUrl = 'https://air.kiisu.club/v1/device/air-3/data?from_date=2018-04-17T11:00&to_date=2018-4-17T12:00';
+    private apiUrl = 'https://air.kiisu.club/v1/device/air-4/data?limit=60';
     //data: any = {};
 
     constructor(private http: HttpClient) {

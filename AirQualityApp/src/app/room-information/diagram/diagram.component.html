@@ -1,8 +1,9 @@
-<div style="display: block">
+<div *ngIf="values" style="display: block">
+    <h4 class="card-title">Temperature</h4>
     <canvas mdbChart 
       [chartType]="chartType"
-      [datasets]="chartDatasets" 
-      [labels]="chartLabels"
+      [datasets]="diagramTemp" 
+      [labels]="labelData"
       [colors]="chartColors"
       [options]="chartOptions"
       [legend]="false"
@@ -10,3 +11,43 @@
       (chartClick)="chartClicked($event)">
     </canvas>
 </div>
+<div *ngIf="values" style="display: block">
+    <h4 class="card-title">Humidity</h4>
+    <canvas mdbChart 
+      [chartType]="chartType"
+      [datasets]="diagramHumid" 
+      [labels]="labelData"
+      [colors]="chartColors"
+      [options]="chartOptions"
+      [legend]="false"
+      (chartHover)="chartHovered($event)" 
+      (chartClick)="chartClicked($event)">
+    </canvas>
+</div>
+<div *ngIf="values" style="display: block">
+    <h4 class="card-title">CO² level</h4>
+    <canvas mdbChart 
+      [chartType]="chartType"
+      [datasets]="diagramCO2" 
+      [labels]="labelData"
+      [colors]="chartColors"
+      [options]="chartOptions"
+      [legend]="false"
+      (chartHover)="chartHovered($event)" 
+      (chartClick)="chartClicked($event)">
+    </canvas>
+</div>
+<div *ngIf="values" style="display: block">
+    <h4 class="card-title">Light level</h4>
+    <canvas mdbChart 
+      [chartType]="chartType"
+      [datasets]="diagramLight" 
+      [labels]="labelData"
+      [colors]="chartColors"
+      [options]="chartOptions"
+      [legend]="false"
+      (chartHover)="chartHovered($event)" 
+      (chartClick)="chartClicked($event)">
+    </canvas>
+</div>
+

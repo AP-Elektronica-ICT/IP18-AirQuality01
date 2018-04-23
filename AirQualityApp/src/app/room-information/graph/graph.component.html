@@ -38,3 +38,16 @@
     (chartClick)="chartClicked($event)">
   </canvas>
 </div>
+<div *ngIf="values" class="" style="display: block">
+    <h4 class="card-title">Light level</h4>
+    <canvas mdbChart 
+      [chartType]="chartType" 
+      [datasets]="chartLight" 
+      [labels]="chartLabels" 
+      [colors]="chartColors" 
+      [options]="chartOptions"
+      [legend]="false" 
+      (chartHover)="chartHovered($event)" 
+      (chartClick)="chartClicked($event)">
+    </canvas>
+  </div>

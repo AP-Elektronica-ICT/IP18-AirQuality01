@@ -28,6 +28,7 @@ import { SettingsComponent } from './settings/settings.component';
 import { MapTwoComponent } from './floor-plan/mapTwo/mapTwo.component';
 
 import { DatePipe } from '@angular/common'
+import { settingsData } from '../services/settingsData';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyCSH_j3_2VwM0OhlWDPStBJvo3QpAXog50",
@@ -72,7 +73,7 @@ export const firebaseConfig = {
     AngularFireAuthModule,
     AngularFireDatabaseModule   
   ],
-  providers: [SensorDataService, AngularFireDatabase, DatePipe],
+  providers: [SensorDataService, AngularFireDatabase, DatePipe,settingsData],
   bootstrap: [AppComponent],
   schemas:[NO_ERRORS_SCHEMA]
 })

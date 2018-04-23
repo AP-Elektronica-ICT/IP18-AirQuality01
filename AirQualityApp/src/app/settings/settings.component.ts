@@ -4,7 +4,7 @@ import {Observable} from 'rxjs/Observable'
 import 'rxjs/add/operator/map';
 import { AngularFireAction } from 'angularfire2/database/interfaces';
 import { connect } from 'tls';
-
+import {settingsData} from '../../services/settingsData'; 
 @Component({
   selector: 'app-settings',
   templateUrl: './settings.component.html',
@@ -18,6 +18,7 @@ settingsValueRef:AngularFireList<any>;
 settingsValue:Observable<any[]>
 
 test:string = "0";
+test2:string = "0"; 
 room: number[] = [1,2,3,4,5,6];
 
 MinimumTemperatureValues : number[] = [5,5,5,5,5,5];
@@ -39,17 +40,13 @@ LightLevel :number[] = [200,200,200,200,200,200];
 Light: number = this.LightLevel[0];
 nr : number = 1;
 
-  constructor(private db: AngularFireDatabase) { }
+  constructor(private db: AngularFireDatabase,private Data:settingsData) { }
   ngOnInit() {
     this.room1 = this.db.list('/room');
     this.sensors = this.room1.snapshotChanges().map(changes => {
       return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
     });
 
-    this.settingsValueRef = this.db.list('/settings');
-    this.settingsValue = this.settingsValueRef.snapshotChanges().map(changes => {
-      return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
-    });
   }
 
   get roomNr()
@@ -64,27 +61,39 @@ nr : number = 1;
     this.changeValue();
   }
 
-  updateTemp(key: string, newText: string,test:string) {
+  updateTemp(key: string, newText: string,id:string,temp:string) {
     console.log(this.test);
-    this.test = test;
+    this.test = id;
     console.log(this.test);
     this.room1.update(key, { temp: newText });
-    this.settingsValueRef.update(this.settings,{mintemp : this.test});
+    this.Data.setValue(this.test,temp);
+   // this.test2 = this.Data.getValue();
+    console.log(this.Data.getValue());
   }
-  updateMaxTemp(key: string, newText: string) {
+  updateMaxTemp(key: string, newText: string,id:string,maxtemp:string) {
     this.room1.update(key, { maxtemp: newText });
+    this.Data.setValueMaxTemp(id,maxtemp);
   }
-  updateCO2(key: string, newText: string) {
+  updateCO2(key: string, newText: string,id:string,co2:string) {
     this.room1.update(key, { co2: newText });
+    this.Data.setValueMinCo2(id,co2);
   }
-  updateHum(key: string, newText: string) {
+  updateHum(key: string, newText: string,id:string,minHum:string) {
     this.room1.update(key, { hum: newText });
+    this.Data.setValueMinHum(id,minHum)
   }
-  updateMaxHum(key: string, newText: string) {
+  updateMaxHum(key: string, newText: string,id:string,maxHum:string) {
     this.room1.update(key, { maxhum: newText });
+    this.Data.setValueMaxHum(id,maxHum);
   }
-  updateMaxCo2(key: string, newText: string) {
+  updateMaxCo2(key: string, newText: string,id:string,maxCo2:string) {
     this.room1.update(key, { maxCo2: newText });
+    this.Data.setValueMaxCo2(id,maxCo2);
+  }
+  updateLight(key:string,newText:string,id:string,light:string)
+  {
+    this.room1.update(key, { light: newText });
+    this.Data.setValueLight(id,light);
   }
   opslaan()
   {

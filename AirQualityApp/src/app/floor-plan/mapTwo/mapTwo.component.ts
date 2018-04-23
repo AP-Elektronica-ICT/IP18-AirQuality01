@@ -3,6 +3,8 @@ import {AngularFireDatabase,AngularFireList} from 'angularfire2/database';
 import {Observable} from 'rxjs/Observable';
 import {Router} from '@angular/router';
 import 'rxjs/add/operator/map';
+import {settingsData} from '../../../services/settingsData';
+
 
 @Component({
   selector: 'app-mapTwo',
@@ -21,6 +23,27 @@ Color:String="0";
 ID:String="0";
 Room:string;
 
+Light:string[];
+Light2:number[] = [0,0,0,0,0,0,0,0];
+
+temp:string[];
+temp2:number[] = [0,0,0,0,0,0,0,0];
+
+maxtemp:string[];
+maxtemp2:number[] = [0,0,0,0,0,0,0,0];
+
+minhum:string[];
+minhum2:number[] = [0,0,0,0,0,0,0,0];
+
+maxhum:string[];
+maxhum2:number[] = [0,0,0,0,0,0,0,0];
+
+minCo2:string[];
+minCo22:number[] = [0,0,0,0,0,0,0,0];
+
+maxCo2:string[];
+maxCo22:number[] = [0,0,0,0,0,0,0,0];
+
 IDD:String="0";
 color= "reds"; // default waarde 
 //Binnenhalen van Value AirQuality en toewijzen aan Room
@@ -28,7 +51,7 @@ color= "reds"; // default waarde
 
 Room1 = new Room(41);
 
-  constructor(private db:AngularFireDatabase, private router:Router) { }
+  constructor(private db:AngularFireDatabase, private router:Router,private Data:settingsData) { }
 /* 
 AirQuality value verdelen in 5 groepen(nog fictieve waarden)
   * 0  - 10 ver onder de goede waarde  ==> blauwe kleur
@@ -45,6 +68,9 @@ AirQuality value verdelen in 5 groepen(nog fictieve waarden)
 
 
     
+    console.log(this.Data.getValueLight());
+    
+
 
     if((this.Room1.getValue() > 0)&&(this.Room1.getValue()<=10))
     {
@@ -77,8 +103,40 @@ AirQuality value verdelen in 5 groepen(nog fictieve waarden)
     console.log(this.Color);
     console.log(this.ID);
     this.Room = "room" + this.ID;
-
     this.RoomItemsRef.update(this.Room,{color:this.Color,id:this.ID,height:this.heighta,width:this.widtha,x:this.X,y:this.Y});
+
+
+
+    this.Light = this.Data.getValueLight();
+    this.temp = this.Data.getValue();
+    this.maxtemp = this.Data.getValueMaxTemp();
+    this.minhum = this.Data.getValueMinHum();
+    this.maxhum = this.Data.getValueMaxHum();
+    this.minCo2 = this.Data.getValueMinCo2();
+    this.maxCo2 = this.Data.getValueMaxCo2();
+
+    for(let i = 0; i <this.Light.length;i++)
+    {
+     this.Light2[i] = parseInt(this.Light[i]);
+
+     this.temp2[i] = parseInt(this.temp[i]);
+     this.maxtemp2[i] = parseInt(this.maxtemp[i]);
+
+     this.minhum2[i]=parseInt(this.minhum[i]);
+     this.maxhum2[i]=parseInt(this.maxhum[i]);
+
+     this.minCo22[i]=parseInt(this.minCo2[i]);
+     this.maxCo22[i]=parseInt(this.maxCo2[i]);
+
+    } 
+   
+    console.log(this.Light2);
+    console.log(this.temp2);
+    console.log("maxtemp"+this.maxtemp2);
+    console.log("maxHum"+this.maxhum2);
+    console.log("minHum"+this.minhum2);
+    console.log("maxCo2"+this.maxCo22);
+    console.log("minCo2"+this.minCo22);
   }
 
   DeleteRoom()

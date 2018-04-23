@@ -31,7 +31,6 @@ export class RoomInformationComponent implements OnInit {
         this.avgLight += (parseFloat(this.values.data[i].attributes.light)/this.values.data.length);
       };
     })
-    
   }
 
   public btnGraphState: string = "btn btn-primary";

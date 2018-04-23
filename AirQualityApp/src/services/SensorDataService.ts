@@ -11,6 +11,7 @@ import 'rxjs/add/operator/map';
 export class SensorDataService {
     private apiHourUrl = 'https://air.kiisu.club/v1/device/air-4/data?limit=60';
     private apiDayUrl = 'https://air.kiisu.club/v1/device/air-4/data?limit=720';
+    private apiVaryUrl = 'https://air.kiisu.club/v1/device/air-4/data?limit=60';
     //data: any = {};
 
     constructor(private http: HttpClient) {
@@ -24,6 +25,11 @@ export class SensorDataService {
     }
     getDayData() : Observable<IRootObject>{
         return this.http.get<IRootObject>(this.apiDayUrl)
+            //.map((res: Response) => res.json())
+    }
+    getVaryData(period: number) : Observable<IRootObject>{
+        this.apiVaryUrl = `https://air.kiisu.club/v1/device/air-4/data?limit=${period}`;
+        return this.http.get<IRootObject>(this.apiVaryUrl)
             //.map((res: Response) => res.json())
     }
 }

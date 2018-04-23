@@ -8,7 +8,7 @@
         </p>
       </div>
 
-      <button type="button" class="btn btn-primary relative waves-light" (click)="basicModal.show()" mdbWavesEffect>Launch demo modal</button>
+      <button type="button" class="btn btn-primary relative waves-light" (click)="basicModal.show()" mdbWavesEffect>Add a room</button>
       
       <div mdbModal #basicModal="mdb-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true" [config]="{backdrop: false, ignoreBackdropClick: true}">
           <div class="modal-dialog" role="document">
@@ -166,8 +166,8 @@
      id="layer2"
      inkscape:label="Layer 2">
     <rect *ngFor ="let room of RoomItems|async"
+    class="trigger"
     [ngStyle] ="{'fill':room.color}"
-       class="trigger"
        [attr.y]="room.y"
        [attr.x]="room.x"
        [attr.height]="room.height"

@@ -23,7 +23,7 @@ export class RoomInformationComponent implements OnInit {
   ngOnInit() {
     this.service.getData().subscribe(d => { 
       this.values = d;
-      for(let i = 0; i <= this.values.data.length; i++){
+      for(let i = 0; i < this.values.data.length; i++){
         this.avgTemp += (parseFloat(this.values.data[i].attributes.temperature)/this.values.data.length);
         this.avgHum += (parseFloat(this.values.data[i].attributes.humidity)/this.values.data.length);
         this.avgCO2 += (parseFloat(this.values.data[i].attributes.co2)/this.values.data.length); 

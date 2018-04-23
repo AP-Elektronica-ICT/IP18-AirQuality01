@@ -13,7 +13,11 @@ import { connect } from 'tls';
 export class SettingsComponent implements OnInit {
 room1:AngularFireList<any>;
 sensors: Observable<any[]>;
+settings:string = "settings";
+settingsValueRef:AngularFireList<any>;
+settingsValue:Observable<any[]>
 
+test:string = "0";
 room: number[] = [1,2,3,4,5,6];
 
 MinimumTemperatureValues : number[] = [5,5,5,5,5,5];
@@ -41,7 +45,11 @@ nr : number = 1;
     this.sensors = this.room1.snapshotChanges().map(changes => {
       return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
     });
-    
+
+    this.settingsValueRef = this.db.list('/settings');
+    this.settingsValue = this.settingsValueRef.snapshotChanges().map(changes => {
+      return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
+    });
   }
 
   get roomNr()
@@ -56,8 +64,12 @@ nr : number = 1;
     this.changeValue();
   }
 
-  updateTemp(key: string, newText: string) {
+  updateTemp(key: string, newText: string,test:string) {
+    console.log(this.test);
+    this.test = test;
+    console.log(this.test);
     this.room1.update(key, { temp: newText });
+    this.settingsValueRef.update(this.settings,{mintemp : this.test});
   }
   updateMaxTemp(key: string, newText: string) {
     this.room1.update(key, { maxtemp: newText });

@@ -30,7 +30,7 @@
             <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
             {{user_Name}}  <img src="{{user_Photo}}" height="25" width="25"/><span class="caret"></span></a>
             <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
-                <a class="dropdown-item waves-light" mdbWavesEffect href="#">Settings</a>
+                <a class="dropdown-item waves-light" [routerLink]="['/settings']" mdbWavesEffect href="#">Settings</a>
                 <div class="divider dropdown-divider"></div>
                 <a class="dropdown-item waves-light" mdbWavesEffect href="#"><a (click)="logout()">Logout</a></a>
             </div>

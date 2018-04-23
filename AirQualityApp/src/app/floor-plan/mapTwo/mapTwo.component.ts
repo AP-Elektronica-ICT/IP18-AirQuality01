@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AngularFireDatabase,AngularFireList} from 'angularfire2/database';
 import {Observable} from 'rxjs/Observable';
+import {Router} from '@angular/router';
 import 'rxjs/add/operator/map';
 
 @Component({
@@ -25,7 +26,7 @@ color= "reds"; // default waarde
 
 Room1 = new Room(41);
 
-  constructor(private db:AngularFireDatabase) { }
+  constructor(private db:AngularFireDatabase, private router:Router) { }
 /* 
 AirQuality value verdelen in 5 groepen(nog fictieve waarden)
   * 0  - 10 ver onder de goede waarde  ==> blauwe kleur
@@ -79,7 +80,10 @@ AirQuality value verdelen in 5 groepen(nog fictieve waarden)
     
   }
   test(test:String)
-  {console.log(test);}
+  {
+    this.router.navigateByUrl('/roominfo');
+    console.log(test);
+  }
 }
 
  class Room{

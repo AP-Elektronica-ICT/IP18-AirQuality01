@@ -8,12 +8,22 @@ import { Component, OnInit } from '@angular/core';
 
 
 export class FloorPlanComponent implements OnInit {
-
-  
-
+floor:boolean = true;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  changefloor1()
+  {
+    this.floor = true;
+    console.log(1);
+  }
+
+  changefloor2()
+  {
+    this.floor = false;
+    console.log(2);
   }
 
 }

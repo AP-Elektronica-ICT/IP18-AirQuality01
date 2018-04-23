@@ -12,8 +12,9 @@ export class SensorDataService {
     private apiHourUrl = 'https://air.kiisu.club/v1/device/air-4/data?limit=60';
     private apiDayUrl = 'https://air.kiisu.club/v1/device/air-4/data?limit=720';
     private apiVaryUrl = 'https://air.kiisu.club/v1/device/air-4/data?limit=60';
+    private apiLatestUrl = 'https://air.kiisu.club/v1/device/air-4/data?limit=1';
     //data: any = {};
-    public period = 2;
+    public period = 1;
 
     constructor(private http: HttpClient) {
         console.log('Test from API');
@@ -32,6 +33,10 @@ export class SensorDataService {
         let _period = this.period * 60;
         this.apiVaryUrl = `https://air.kiisu.club/v1/device/air-4/data?limit=${_period}`;
         return this.http.get<IRootObject>(this.apiVaryUrl)
+            //.map((res: Response) => res.json())
+    }
+    getLatestData() : Observable<IRootObject>{;
+        return this.http.get<IRootObject>(this.apiLatestUrl)
             //.map((res: Response) => res.json())
     }
 }

@@ -27,6 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { SettingsComponent } from './settings/settings.component';
 import { MapTwoComponent } from './floor-plan/mapTwo/mapTwo.component';
 
+import { DatePipe } from '@angular/common'
+
 export const firebaseConfig = {
   apiKey: "AIzaSyCSH_j3_2VwM0OhlWDPStBJvo3QpAXog50",
   authDomain: "airqualityapp-1e114.firebaseapp.com",
@@ -70,7 +72,7 @@ export const firebaseConfig = {
     AngularFireAuthModule,
     AngularFireDatabaseModule   
   ],
-  providers: [SensorDataService,AngularFireDatabase],
+  providers: [SensorDataService, AngularFireDatabase, DatePipe],
   bootstrap: [AppComponent],
   schemas:[NO_ERRORS_SCHEMA]
 })

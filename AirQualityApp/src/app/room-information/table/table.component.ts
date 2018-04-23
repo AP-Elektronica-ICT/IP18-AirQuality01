@@ -18,6 +18,10 @@ export class TableComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.assignValues();
+  }
+
+  assignValues(){
     this.service.getVaryData().subscribe(d => {
       this.values = d});
   }

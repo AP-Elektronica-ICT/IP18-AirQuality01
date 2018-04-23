@@ -3,18 +3,18 @@
     <tr>
       <th></th>
       <th>Temperature</th>
-      <th>Humidity</th>
       <th>CO² level</th>
       <th>Light level</th>
+      <th>Humidity</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let item of values.data">
       <th scope="row">{{ item.attributes.created_at | date: 'HH:mm:ss Z, dd/MM/yy' }}</th>
       <td>{{item.attributes.temperature }} °C</td>
-      <td>{{item.attributes.humidity}} %</td>
       <td>{{item.attributes.co2}} ppm</td>
       <td>{{item.attributes.light}} LUX</td>
+      <td>{{item.attributes.humidity}} %</td>
     </tr>
   </tbody>
 </table>

@@ -42,7 +42,7 @@
         </div>
         <br>
         <div class="card">
-            <app-table></app-table>
+            <app-table #table></app-table>
         </div>
 
     </div>
@@ -56,8 +56,8 @@
         <div class="card">
 
             <div class="card-body">
-                <app-graph *ngIf="graphActive"></app-graph>
-                <app-diagram *ngIf="diagramActive"></app-diagram>
+                <app-graph *ngIf="graphActive && !valuesChanged" #graph></app-graph>
+                <app-diagram *ngIf="diagramActive && !valuesChanged" #diagram></app-diagram>
             </div>
         </div>
     </div>

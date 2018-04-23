@@ -21,6 +21,8 @@ export class RoomInformationComponent implements OnInit {
   avgLight: number = 0;
 
   displayTime: number;
+  
+  roomScore: number = 98;
 
   constructor(private service: SensorDataService) {
 
@@ -39,10 +41,10 @@ export class RoomInformationComponent implements OnInit {
     this.displayTime = this.service.period;
   }
 
-  public btnGraphState: string = "btn btn-primary";
+  public btnGraphState: string = "btn btn-black";
   public btnDiagramState: string = "btn";
 
-  private selected: string = "btn btn-primary";
+  private selected: string = "btn btn-black";
   private notSelected: string = "btn";
 
   public graphActive: boolean = true;
@@ -59,5 +61,30 @@ export class RoomInformationComponent implements OnInit {
     this.btnDiagramState = this.selected;
     this.diagramActive = true;
     this.graphActive = false;
+  }
+
+  public substractInterval(){
+    Math.abs(this.displayTime--);
+    this.service.getVaryData().subscribe(d => { 
+      this.values = d;
+      for(let i = 0; i < this.values.data.length; i++){
+        this.avgTemp += (parseFloat(this.values.data[i].attributes.temperature)/this.values.data.length);
+        this.avgHum += (parseFloat(this.values.data[i].attributes.humidity)/this.values.data.length);
+        this.avgCO2 += (parseFloat(this.values.data[i].attributes.co2)/this.values.data.length);
+        this.avgLight += (parseFloat(this.values.data[i].attributes.light)/this.values.data.length);
+      };
+    })
+  }
+  public addInterval(){
+    this.displayTime++;
+    this.service.getVaryData().subscribe(d => { 
+      this.values = d;
+      for(let i = 0; i < this.values.data.length; i++){
+        this.avgTemp += (parseFloat(this.values.data[i].attributes.temperature)/this.values.data.length);
+        this.avgHum += (parseFloat(this.values.data[i].attributes.humidity)/this.values.data.length);
+        this.avgCO2 += (parseFloat(this.values.data[i].attributes.co2)/this.values.data.length);
+        this.avgLight += (parseFloat(this.values.data[i].attributes.light)/this.values.data.length);
+      };
+    })
   }
 }

@@ -1,40 +1,50 @@
-<div class="row d-flex justify-content-center px-5">
+<div class="row px-5">
     <div class="col p-2">
         <div class="card">
-            <div class="card-body d-flex justify-content-end">
+            <h3 class="card-header black white-text">Room 1</h3>
+            <div class="card-body ">
+                <div class="row">
+                    <div class="col p-2">
+                        <p class="card-text">
+                            <b>Average temperature:</b> {{ avgTemp | number:'2.0-2' }} °C
+                            <br>
+                            <b>Average Humidity:</b> {{ avgHum | number:'2.0-2' }} %
+                            <br>
+                            <b>Average CO² level:</b> {{ avgCO2 | number:'2.0-2' }} ppm
+                            <br>
+                            <b>Average light level:</b> {{ avgLight | number:'2.0-2' }} LUX
+                        </p>
+                    </div>
 
-                <div class="col p-2">
-                    <h4 class="card-title">Room 1</h4>
-                    <p class="card-text">
-                        <b>Average temperature:</b> {{ avgTemp | number:'2.0-2' }} °C
-                        <br>
-                        <b>Average Humidity:</b> {{ avgHum | number:'2.0-2' }} %
-                        <br>
-                        <b>Average CO² level:</b> {{ avgCO2 | number:'2.0-2' }} ppm
-                        <br>
-                        <b>Average light level:</b> {{ avgLight | number:'2.0-2' }} LUX
-                    </p>
-                </div>
+                    <div class="col p-2 d-flex justify-content-center">
 
-                <div class="col p-2">
-                    <p class="card-text">
-                        Showing data for the last {{displayTime}} hour(s).
-                    </p>
-                </div>
-                
-                <div class="col p-2">
-                <div class="card success-color  z-depth-2">
-                        <div class="card-body">
-                            <h1 class="white-text align-self-center mb-0">98/100</h1>
+                        <button type="button" class="btn btn-black waves-light" (click)="substractInterval()" mdbWavesEffect>-</button>
+                        <button type="button" class="btn btn-black waves-light" (click)="addInterval()" mdbWavesEffect>+</button>
+
+                    </div>
+
+                    <div class="col p-2 d-flex justify-content-center">
+                        <p class="card-text">
+                            Showing data for the last<br>
+                            <b>{{displayTime}} hour(s).</b>
+                        </p>
+                    </div>
+
+                    <div class="col p-2 d-flex justify-content-end">
+                        <div class="d-inline-flex card success-color z-depth-2">
+                            <div class="card-body">
+                                <h1 class="white-text mb-0">{{roomScore}}/100</h1>
+                            </div>
                         </div>
                     </div>
+                </div>
             </div>
         </div>
         <br>
         <div class="card">
             <app-table></app-table>
         </div>
-    </div>
+
     </div>
 
     <div class="col p-2">

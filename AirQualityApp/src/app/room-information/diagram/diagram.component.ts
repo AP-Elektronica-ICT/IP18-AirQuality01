@@ -27,7 +27,7 @@ export class DiagramComponent implements OnInit {
   constructor(private service: SensorDataService) { }
 
   ngOnInit() {
-    this.service.getData().subscribe(d => { 
+    this.service.getHourData().subscribe(d => { 
         this.values = d;
         this.valuesLength = this.values.data.length;
         console.log(this.valuesLength);

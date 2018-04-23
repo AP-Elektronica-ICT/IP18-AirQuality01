@@ -9,16 +9,21 @@ import 'rxjs/add/operator/map';
  
 @Injectable()
 export class SensorDataService {
-    private apiUrl = 'https://air.kiisu.club/v1/device/air-4/data?limit=60';
+    private apiHourUrl = 'https://air.kiisu.club/v1/device/air-4/data?limit=60';
+    private apiDayUrl = 'https://air.kiisu.club/v1/device/air-4/data?limit=720';
     //data: any = {};
 
     constructor(private http: HttpClient) {
         console.log('Test from API');
-        this.getData();
+        this.getHourData();
     }
 
-    getData() : Observable<IRootObject>{
-        return this.http.get<IRootObject>(this.apiUrl)
+    getHourData() : Observable<IRootObject>{
+        return this.http.get<IRootObject>(this.apiHourUrl)
+            //.map((res: Response) => res.json())
+    }
+    getDayData() : Observable<IRootObject>{
+        return this.http.get<IRootObject>(this.apiDayUrl)
             //.map((res: Response) => res.json())
     }
 }

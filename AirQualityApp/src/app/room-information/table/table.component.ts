@@ -18,7 +18,7 @@ export class TableComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.service.getData().subscribe(d => {
+    this.service.getHourData().subscribe(d => {
       this.values = d});
   }
 

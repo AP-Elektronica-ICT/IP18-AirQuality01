@@ -15,18 +15,20 @@ export class RoomInformationComponent implements OnInit {
   avgTemp: number = 0;
   avgHum: number = 0;
   avgCO2: number = 0;
+  avgLight: number = 0;
 
   constructor(private service: SensorDataService) {
 
    }
 
   ngOnInit() {
-    this.service.getData().subscribe(d => { 
+    this.service.getHourData().subscribe(d => { 
       this.values = d;
       for(let i = 0; i < this.values.data.length; i++){
         this.avgTemp += (parseFloat(this.values.data[i].attributes.temperature)/this.values.data.length);
         this.avgHum += (parseFloat(this.values.data[i].attributes.humidity)/this.values.data.length);
-        this.avgCO2 += (parseFloat(this.values.data[i].attributes.co2)/this.values.data.length); 
+        this.avgCO2 += (parseFloat(this.values.data[i].attributes.co2)/this.values.data.length);
+        this.avgLight += (parseFloat(this.values.data[i].attributes.light)/this.values.data.length);
       };
     })
     

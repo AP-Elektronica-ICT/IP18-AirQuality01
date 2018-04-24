@@ -65,7 +65,7 @@ AirQuality value verdelen in 5 groepen(nog fictieve waarden)
   * 41 - 50 ver boven de goede waarde  ==> rode kleur
 */
   ngOnInit() {
-    this.AssignValue();
+    //this.AssignValue();
     this.RoomItemsRef = this.db.list('/DrawRoom');
     this.RoomItems = this.RoomItemsRef.snapshotChanges().map(changes => {
       return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
@@ -105,7 +105,7 @@ AirQuality value verdelen in 5 groepen(nog fictieve waarden)
       this.lightData = parseFloat(this.values.data[0].attributes.light);
       console.log(this.lightData);
 
-      if((this.lightData > 0)&&(this.lightData<=20))
+     /* if((this.lightData > 0)&&(this.lightData<=20))
       {
         this.RoomItemsRef.update("room2",{color:"#0F2D00"});
       }
@@ -132,15 +132,8 @@ AirQuality value verdelen in 5 groepen(nog fictieve waarden)
       if(this.lightData > 520)
       {
         this.RoomItemsRef.update("room2",{color:"#51F102"});
-      }
+      }*/
       
-
-
-
-
-
-
-
     });
   }
   AddRoom()

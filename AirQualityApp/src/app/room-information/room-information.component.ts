@@ -5,6 +5,7 @@ import { Pipe } from '@angular/core';
 import { TableComponent } from './table/table.component';
 import { GraphComponent } from './graph/graph.component';
 import { DiagramComponent } from './diagram/diagram.component';
+import {ActivatedRoute} from '@angular/router'
 
 @Component({
   selector: 'app-room-information',
@@ -23,6 +24,8 @@ export class RoomInformationComponent implements OnInit {
   avgCO2: number = 0;
   avgLight: number = 0;
 
+  id:string = "4";
+
   //Aantal uren van sensor data weergeven
   displayTime: number;
 
@@ -30,15 +33,25 @@ export class RoomInformationComponent implements OnInit {
   
   roomScore: number = 98;
 
-  constructor(private service: SensorDataService) {
+  constructor(private service: SensorDataService,private route:ActivatedRoute) {
+    let id = this.route.snapshot.params['id']
+    //service.id = "4";
 
+    if(id != undefined)
+       service.id = id;
+    else{
+      service.id = "4";
+    }
+
+      
    }
 
   ngOnInit() {
     this.assignValues();
     this.displayTime = this.service.period;
+    console.log(this.id);
   }
-
+  
   public btnGraphState: string = "btn btn-black";
   public btnDiagramState: string = "btn";
 

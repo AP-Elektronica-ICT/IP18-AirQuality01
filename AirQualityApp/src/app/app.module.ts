@@ -66,6 +66,7 @@ export const firebaseConfig = {
       { path: 'home', component: HomeComponent},
       { path: 'floorplan', component: FloorPlanComponent},
       { path: 'roominfo', component: RoomInformationComponent},
+      { path: 'roominfo/:id',component:RoomInformationComponent},
       { path: 'settings', component: SettingsComponent},
       { path: '', redirectTo: 'home', pathMatch: 'full'}
     ], { useHash: true }),

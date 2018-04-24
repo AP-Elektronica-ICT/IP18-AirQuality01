@@ -195,7 +195,7 @@ AirQuality value verdelen in 5 groepen(nog fictieve waarden)
   }
   test(test:String)
   {
-    this.router.navigateByUrl('/roominfo');
+    this.router.navigateByUrl('/roominfo/'+test);
     console.log(test);
   }
 }
